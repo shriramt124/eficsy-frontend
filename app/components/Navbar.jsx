@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -9,7 +10,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 100);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -44,32 +45,29 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'backdrop-blur-xl shadow-2xl shadow-blue-500/10 border-b border-blue-500/20'
-          : 'bg-transparent'
-      }`}
-      style={{
-        background: isScrolled ? '#492efcff' : 'transparent'
-      }}
+      className={`fixed top-0 left-0 mt-[1rem] mx-auto w-full z-50 transition-all duration-500`}
     >
-      <div className="flex items-center h-16" style={{ width: '100%' }}>
-        {/* Left Half - Aligned with Hero Content */}
-        <div className="flex items-center w-1/2 px-4 sm:px-6 md:px-8 lg:px-16">
-          {/* Logo - Left Side Only */}
+      <div className="flex items-center justify-center h-16 max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+        {/* Centered Navigation Container */}
+        <div className={`flex items-center justify-between w-full max-w-4xl mx-auto rounded-full px-6 py-2 border transition-all duration-500 ${
+          isScrolled 
+            ? 'bg-black border-white/20 text-white' 
+            : 'bg-white/70 border-white/10 text-black'
+        }`}>
+          {/* Logo - Left Side */}
           <Link href="/" className="flex items-center group relative z-10">
-            <span className={`text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent transition-all duration-300 ${
-              isScrolled ? 'drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]' : ''
-            }`}>
-              Eficsy
-            </span>
+            <Image 
+              src="/logo.jpg" 
+              alt="Eficsy Logo" 
+              width={120} 
+              height={40}
+              className="h-8 sm:h-10 w-auto object-contain transition-all duration-300"
+              priority
+            />
           </Link>
-        </div>
 
-        {/* Right Half - Navigation Links */}
-        <div className="flex items-center justify-end w-1/2 px-4 sm:px-6 md:px-8 lg:px-16">
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-10">
+          {/* Desktop Navigation Links - Center */}
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link, index) => (
               <a
                 key={link.name}
@@ -78,22 +76,26 @@ export default function Navbar() {
                 className="relative group cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <span className={`text-sm xl:text-base font-medium transition-all duration-300 ${
+                <span className={`text-sm font-medium transition-all duration-300 ${
                   isScrolled 
-                    ? 'text-gray-200 hover:text-white' 
-                    : 'text-gray-300 hover:text-white'
+                    ? 'text-white/90 hover:text-white' 
+                    : 'text-black/90 hover:text-black'
                 }`}>
                   {link.name}
                 </span>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 group-hover:w-full transition-all duration-300 ease-out"></span>
-                <span className="absolute inset-0 -z-10 bg-white/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm"></span>
               </a>
             ))}
-            
-            {/* CTA Button */}
-            <button className="relative px-4 xl:px-6 py-2 bg-black text-white rounded-full font-medium text-sm whitespace-nowrap overflow-hidden group shadow-lg hover:shadow-xl transition-all duration-300">
-              <span className="relative z-10">Let's Connect</span>
-              <div className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          
+          {/* CTA Button - Right Side */}
+          <div className="hidden lg:flex">
+            <button className={`px-6 py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-lg ${
+              isScrolled 
+                ? 'bg-white text-black hover:bg-gray-200' 
+                : 'bg-white text-gray-900 hover:bg-gray-100'
+            }`}>
+              Let's Connect
             </button>
           </div>
 
@@ -103,17 +105,23 @@ export default function Navbar() {
             className="lg:hidden relative w-10 h-10 flex flex-col items-center justify-center focus:outline-none group"
           >
             <span
-              className={`w-6 h-0.5 bg-gray-300 transition-all duration-300 ${
+              className={`w-6 h-0.5 transition-all duration-300 ${
+                isScrolled ? 'bg-white' : 'bg-black'
+              } ${
                 isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : 'mb-1.5'
               }`}
             ></span>
             <span
-              className={`w-6 h-0.5 bg-gray-300 transition-all duration-300 ${
+              className={`w-6 h-0.5 transition-all duration-300 ${
+                isScrolled ? 'bg-white' : 'bg-black'
+              } ${
                 isMobileMenuOpen ? 'opacity-0' : 'mb-1.5'
               }`}
             ></span>
             <span
-              className={`w-6 h-0.5 bg-gray-300 transition-all duration-300 ${
+              className={`w-6 h-0.5 transition-all duration-300 ${
+                isScrolled ? 'bg-white' : 'bg-black'
+              } ${
                 isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
               }`}
             ></span>
