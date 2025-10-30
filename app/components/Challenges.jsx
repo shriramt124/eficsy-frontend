@@ -77,64 +77,64 @@ export default function Challenges() {
   return (
     <section 
       ref={sectionRef} 
-      className="relative bg-white py-24"
+      className="relative bg-white py-16 sm:py-20 md:py-24"
       // Increase section height so the scroll progress can reach 1 on common viewports
       style={{ minHeight: "300vh" }}
     >
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-6 w-full">
-          <div className="relative min-h-[420px] md:min-h-[480px] lg:min-h-[600px]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 w-full">
+          <div className="relative min-h-[320px] sm:min-h-[420px] md:min-h-[480px] lg:min-h-[600px]">
             {/* Centered headline - stays in center */}
             <h2 
               style={getTitleStyle()}
-              className="absolute inset-0 flex items-center justify-center text-2xl font-extrabold text-[#0b1220] max-w-4xl mx-auto leading-tight z-10 transition-all duration-500 ease-out"
+              className="absolute inset-0 flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#0b1220] max-w-4xl mx-auto leading-tight z-10 transition-all duration-500 ease-out px-4"
             >
               We recognize the challenges you face. That is why your path to impact with AI starts here.
             </h2>
 
-            {/* Positioned info cards with parallax (visible on lg+) */}
-            <div className="hidden lg:block">
+            {/* Positioned info cards with parallax */}
+            <div>
               {/* top-left - slides from LEFT */}
               <div
                 style={getStripStyle(0, true)}
-                className="absolute z-20 left-6 top-4 w-80 bg-white border border-gray-100 rounded-xl p-4 shadow-lg transition-all duration-700 ease-out"
+                className="absolute z-20 left-2 sm:left-4 lg:left-6 top-2 sm:top-4 w-52 sm:w-64 lg:w-80 bg-white border border-gray-100 rounded-xl p-2.5 sm:p-3 lg:p-4 shadow-lg transition-all duration-700 ease-out"
               >
-                <div className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.29 3.86L1.82 18a1.75 1.75 0 001.49 2.6h16.38a1.75 1.75 0 001.49-2.6L13.71 3.86a1.75 1.75 0 00-3.42 0zM12 9v4m0 4h.01" /></svg>
-                  <div className="text-sm text-gray-800">Skilled teams stuck in repetitive work instead of creating value.</div>
+                <div className="flex items-start gap-1.5 sm:gap-2 lg:gap-3">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.29 3.86L1.82 18a1.75 1.75 0 001.49 2.6h16.38a1.75 1.75 0 001.49-2.6L13.71 3.86a1.75 1.75 0 00-3.42 0zM12 9v4m0 4h.01" /></svg>
+                  <div className="text-[10px] sm:text-xs lg:text-sm text-gray-800">Skilled teams stuck in repetitive work instead of creating value.</div>
                 </div>
               </div>
 
               {/* top-right - slides from RIGHT */}
               <div
                 style={getStripStyle(1, false)}
-                className="absolute z-20 right-6 top-16 w-96 bg-white border border-gray-100 rounded-xl p-4 shadow-lg transition-all duration-700 ease-out"
+                className="absolute z-20 right-2 sm:right-4 lg:right-6 top-10 sm:top-12 lg:top-16 w-56 sm:w-72 lg:w-96 bg-white border border-gray-100 rounded-xl p-2.5 sm:p-3 lg:p-4 shadow-lg transition-all duration-700 ease-out"
               >
-                <div className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.29 3.86L1.82 18a1.75 1.75 0 001.49 2.6h16.38a1.75 1.75 0 001.49-2.6L13.71 3.86a1.75 1.75 0 00-3.42 0zM12 9v4m0 4h.01" /></svg>
-                  <div className="text-sm text-gray-800">Processes that slow decisions and frustrate customers.</div>
+                <div className="flex items-start gap-1.5 sm:gap-2 lg:gap-3">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.29 3.86L1.82 18a1.75 1.75 0 001.49 2.6h16.38a1.75 1.75 0 001.49-2.6L13.71 3.86a1.75 1.75 0 00-3.42 0zM12 9v4m0 4h.01" /></svg>
+                  <div className="text-[10px] sm:text-xs lg:text-sm text-gray-800">Processes that slow decisions and frustrate customers.</div>
                 </div>
               </div>
 
               {/* bottom-left - slides from LEFT */}
               <div
                 style={getStripStyle(2, true)}
-                className="absolute z-20 left-12 bottom-28 w-80 bg-white border border-gray-100 rounded-xl p-4 shadow-lg transition-all duration-700 ease-out"
+                className="absolute z-20 left-2 sm:left-6 lg:left-12 bottom-20 sm:bottom-24 lg:bottom-28 w-52 sm:w-64 lg:w-80 bg-white border border-gray-100 rounded-xl p-2.5 sm:p-3 lg:p-4 shadow-lg transition-all duration-700 ease-out"
               >
-                <div className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.29 3.86L1.82 18a1.75 1.75 0 001.49 2.6h16.38a1.75 1.75 0 001.49-2.6L13.71 3.86a1.75 1.75 0 00-3.42 0zM12 9v4m0 4h.01" /></svg>
-                  <div className="text-sm text-gray-800">Scaling that requires more people instead of smarter systems.</div>
+                <div className="flex items-start gap-1.5 sm:gap-2 lg:gap-3">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.29 3.86L1.82 18a1.75 1.75 0 001.49 2.6h16.38a1.75 1.75 0 001.49-2.6L13.71 3.86a1.75 1.75 0 00-3.42 0zM12 9v4m0 4h.01" /></svg>
+                  <div className="text-[10px] sm:text-xs lg:text-sm text-gray-800">Scaling that requires more people instead of smarter systems.</div>
                 </div>
               </div>
 
               {/* bottom-right - slides from RIGHT */}
               <div
                 style={getStripStyle(3, false)}
-                className="absolute z-20 right-6 bottom-4 w-96 bg-white border border-gray-100 rounded-xl p-4 shadow-lg transition-all duration-700 ease-out"
+                className="absolute z-20 right-2 sm:right-4 lg:right-6 bottom-2 sm:bottom-4 w-56 sm:w-72 lg:w-96 bg-white border border-gray-100 rounded-xl p-2.5 sm:p-3 lg:p-4 shadow-lg transition-all duration-700 ease-out"
               >
-                <div className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.29 3.86L1.82 18a1.75 1.75 0 001.49 2.6h16.38a1.75 1.75 0 001.49-2.6L13.71 3.86a1.75 1.75 0 00-3.42 0zM12 9v4m0 4h.01" /></svg>
-                  <div className="text-sm text-gray-800">Technology investments that add cost instead of driving growth.</div>
+                <div className="flex items-start gap-1.5 sm:gap-2 lg:gap-3">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.29 3.86L1.82 18a1.75 1.75 0 001.49 2.6h16.38a1.75 1.75 0 001.49-2.6L13.71 3.86a1.75 1.75 0 00-3.42 0zM12 9v4m0 4h.01" /></svg>
+                  <div className="text-[10px] sm:text-xs lg:text-sm text-gray-800">Technology investments that add cost instead of driving growth.</div>
                 </div>
               </div>
             </div>

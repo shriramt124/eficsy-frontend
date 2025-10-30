@@ -38,41 +38,41 @@ export default function FaqSection() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section className="bg-white text-black py-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="bg-white text-black py-16 sm:py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading row */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start lg:items-end mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-start lg:items-end mb-8 sm:mb-10 md:mb-12">
           <div>
-            <h2 className="text-4xl  font-extrabold leading-[1.05] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight">
               Frequently Asked
             <br />
               Questions
             </h2>
           </div>
           <div className="lg:text-right">
-            <p className="text-gray-600 max-w-md lg:ml-auto">
+            <p className="text-sm sm:text-base text-gray-600 max-w-md lg:ml-auto">
               Our services help you create digital products. Stay ahead of the curve with our latest insights, tips, and industry trends.
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-start">
           {/* Left: image with CTA card */}
-          <div className="relative rounded-xl overflow-hidden bg-gray-100 max-h-[500px] min-h-[400px]">
+          <div className="relative rounded-xl overflow-hidden bg-gray-100 min-h-[320px] sm:min-h-[400px] lg:max-h-[500px]">
             <img
               src="longimage.jpg"
               alt="Support agent"
               className="w-full h-full object-cover"
             />
             {/* CTA card */}
-            <div className="absolute bottom-6 left-6 bg-white rounded-xl shadow-xl max-w-[360px] p-6">
-              <p className="text-2xl font-semibold mb-2">Need More Info?</p>
-              <p className="text-gray-600 text-sm mb-5">
+            <div className="absolute bottom-6 left-6 bg-white rounded-md shadow-xl max-w-[360px] p-4 sm:p-6 ">
+              <p className="text-xl sm:text-2xl font-semibold mb-2">Need More Info?</p>
+              <p className="text-gray-600 text-sm mb-5 text-sm">
                 Didn’t find what you were looking for? Let’s chat and solve it together!
               </p>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-5 py-3 rounded-md bg-black text-white font-semibold shadow hover:brightness-95 transition"
+                className="inline-flex items-center justify-center px-3 sm:px-5 sm:py-3 py-2 rounded-md bg-black text-white font-semibold shadow hover:brightness-95 transition"
               >
                 Contact us
               </a>

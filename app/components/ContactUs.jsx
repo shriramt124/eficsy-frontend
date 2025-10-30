@@ -29,30 +29,30 @@ export default function ContactUs() {
   };
 
   return (
-    <section className="bg-white text-black py-20 relative">
-      <div className="container mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section className="bg-white text-black py-12 sm:py-16 md:py-20 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* Left Side - Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
               <span className=" text-black  bg-clip-text  ">
                 Let's build
               </span>
               <br />
               <span className="text-black">something amazing</span>
             </h2>
-            <p className="text-lg text-gray-900 max-w-lg">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-900 max-w-lg">
               Ready to transform your ideas into reality? Tell us about your project and we'll help you ship fast, beautifully, and with impact.
             </p>
-            <div className="pt-4">
-              <p className="text-gray-400 mb-2">Mail us at</p>
-              <a href="mailto:info@eficsy.com" className="text-2xl font-semibold text-black hover:text-orange-300 transition-colors">
+            <div className="pt-2 sm:pt-4">
+              <p className="text-gray-400 mb-2 text-sm">Mail us at</p>
+              <a href="mailto:info@eficsy.com" className="text-lg sm:text-xl md:text-2xl font-semibold text-black hover:text-orange-300 transition-colors">
                 info@eficsy.com
               </a>
             </div>

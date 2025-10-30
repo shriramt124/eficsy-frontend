@@ -34,12 +34,12 @@ export default function BlogSection() {
   ];
 
   return (
-    <section className="bg-black text-white py-24">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start lg:items-end mb-12">
+    <section className="bg-black text-white py-15 sm:py-24">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start lg:items-end mb-10">
           <div>
             <p className="text-sm text-gray-100 mb-4">Blog</p>
-            <h2 className="text-5xl   font-extrabold leading-tight">
+            <h2 className="text-2xl  sm:text-4xl lg:text-5xl font-extrabold leading-tight">
               Insights, Ideas & Design
             
               Inspiration
@@ -47,7 +47,7 @@ export default function BlogSection() {
           </div>
 
           <div className="lg:pt-10 lg:text-right">
-            <p className="text-gray-100 max-w-md">
+            <p className="text-gray-100/90 max-w-md text-sm sm:text-base">
               Stay up to date with the latest trends, strategies, and perspectives from our design
              
             </p>
@@ -56,7 +56,7 @@ export default function BlogSection() {
 
         {/* animated grid: stagger children as they enter the viewport */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-10"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.18 }}
@@ -68,7 +68,7 @@ export default function BlogSection() {
           {posts.map((p, i) => (
             <motion.article
               key={p.id}
-              className={`rounded-xl text-black overflow-hidden group bg-[#071017] flex flex-col h-full shadow-lg bg-white`}
+              className={`rounded-md  text-black overflow-hidden group bg-[#071017] flex flex-col h-full  sm:shadow-lg bg-white`}
               variants={{
                 hidden: { opacity: 0, y: 18 },
                 show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.2, 0.8, 0.2, 1] } },
@@ -78,25 +78,25 @@ export default function BlogSection() {
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="w-full h-48 md:h-56 object-cover transform transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-40 sm:h-48 md:h-56 object-cover transform transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* subtle gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               </div>
 
-              <div className="p-6 flex flex-col flex-1">
-                <div className="flex items-center justify-between mb-4 text-sm text-gray-800">
+              <div className="p-3  sm:p-5 flex flex-col flex-1">
+                <div className="flex items-center justify-between mb-4 sm:mb-4 text-xs sm:text-sm text-gray-800">
                   <div className="flex items-center gap-3">
-                    <span className="uppercase tracking-wide text-xs font-semibold text-gray-800">{p.tag}</span>
-                    <span className="text-gray-400">{p.readTime}</span>
+                    <span className="uppercase tracking-wide text-[8px] sm:text-xs font-semibold text-gray-800">{p.tag}</span>
+                    <span className="text-gray-400 text-[8px] sm:text-xs">{p.readTime}</span>
                   </div>
-                  <div className="text-gray-400">{p.date}</div>
+                  <div className="text-gray-400 text-[8px] sm:text-xs">{p.date}</div>
                 </div>
 
-                <h3 className="text-2xl md:text-2xl font-extrabold text-black leading-tight mb-4">{p.title}</h3>
+                <h3 className="text-md sm:text-2xl font-extrabold text-black leading-tight mb-2 sm:pb-4">{p.title}</h3>
 
                 <div className="mt-auto">
-                  <a href="#" className="text-black font-semibold inline-flex items-center gap-2">
+                  <a href="#" className="text-black text-xs sm:text-sm font-semibold inline-flex items-center gap-2">
                     Read More <span className="text-black/30">↗</span>
                   </a>
                 </div>

@@ -193,6 +193,7 @@ const TestimonialCard = ({
 export const StaggerTestimonials = () => {
   const [cardSize, setCardSize] = useState(365);
   const [testimonialsList, setTestimonialsList] = useState(testimonials);
+  const containerHeight = Math.max(460, cardSize + 225);
 
   const handleMove = (steps) => {
     const newList = [...testimonialsList];
@@ -224,10 +225,10 @@ export const StaggerTestimonials = () => {
   }, []);
 
   return (
-    
+
     <div
-      className="relative w-full overflow-hidden   bg-white"
-      style={{ height: 600 }}>
+      className="relative w-full overflow-hidden bg-white rounded-xl"
+      style={{ height: containerHeight }}>
       {testimonialsList.map((testimonial, index) => {
         const position = testimonialsList.length % 2
           ? index - (testimonialsList.length + 1) / 2
@@ -245,7 +246,7 @@ export const StaggerTestimonials = () => {
         <button
           onClick={() => handleMove(-1)}
           className={cn(
-            "flex h-14 w-14 text-white items-center justify-center text-2xl transition-colors",
+            "flex h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 text-white items-center justify-center text-xl sm:text-2xl transition-colors",
             "bg-background border-2 border-border hover:bg-primary hover:text-primary-foreground",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           )}
@@ -255,7 +256,7 @@ export const StaggerTestimonials = () => {
         <button
           onClick={() => handleMove(1)}
           className={cn(
-            "flex h-14 w-14 items-center justify-center text-2xl transition-colors",
+            "flex h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 items-center justify-center text-xl sm:text-2xl transition-colors",
             "bg-background border-2 text-white border-border hover:bg-primary hover:text-primary-foreground",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           )}

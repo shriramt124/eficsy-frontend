@@ -120,14 +120,14 @@ export default function Hero() {
       ))}
 
       {/* Content */}
-      <div className="relative z-20 max-w-7xl mx-auto h-full px-6 lg:px-12 flex items-center">
+      <div className="relative z-20 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-12 flex items-center">
         <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 flex flex-col justify-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4 drop-shadow-lg">{slides[currentSlide].title}</h1>
-            <p className="text-base md:text-lg text-gray-200 max-w-2xl mb-6">{slides[currentSlide].description}</p>
-            <div className="flex items-center gap-4">
-              <button className="inline-flex items-center px-6 py-3 rounded-full bg-white text-black font-semibold hover:scale-[1.02] transition">{slides[currentSlide].buttonText}</button>
-              <button className="inline-flex items-center px-4 py-2 rounded-full border border-white text-white/90 hover:bg-white/10 transition">Learn more</button>
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-3 sm:mb-4 drop-shadow-lg">{slides[currentSlide].title}</h1>
+            <p className="text-sm sm:text-base md:text-lg text-gray-200 max-w-2xl mb-4 sm:mb-6">{slides[currentSlide].description}</p>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+              <button className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-full bg-white text-black font-semibold hover:scale-[1.02] transition w-full sm:w-auto justify-center">{slides[currentSlide].buttonText}</button>
+              <button className="inline-flex items-center px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full border border-white text-white/90 hover:bg-white/10 transition w-full sm:w-auto justify-center">Learn more</button>
             </div>
           </div>
 
@@ -200,11 +200,11 @@ export default function Hero() {
       </div>
     </section>
   {/* Below-hero showcase section (large left headline + right image) */}
-    <section className="bg-white py-16">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8">
+    <section className="bg-white py-10 sm:py-14 md:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6 sm:gap-8">
           <div className="lg:col-span-8">
-            <h2 className="text-black font-extrabold leading-tight text-5xl md:text-6xl lg:text-6xl">
+            <h2 className="text-black font-extrabold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
               Unlocking growth with
             
               data, technology and
@@ -222,9 +222,9 @@ export default function Hero() {
       </div>
     </section>
     {/* Company intro: image-left, content-right with CTA buttons and trusted-by row */}
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <section className="py-10 sm:py-14 md:py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           {/* Left image */}
           <div className="lg:col-span-7">
             <div className="overflow-hidden rounded-md shadow-sm">
@@ -234,22 +234,22 @@ export default function Hero() {
 
           {/* Right content */}
           <div className="lg:col-span-5">
-            <p className="text-lg text-gray-700 mb-6 max-w-xl">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-700 mb-5 sm:mb-6 max-w-xl">
               From data strategy to managed AI solutions. At Subduxion we align technology advancements with your business model turning pressure from AI into performance and data investments into impact.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 mb-8">
-              <button className="inline-flex items-center px-3 py-2 text-md bg-black text-white rounded-md font-medium shadow-sm">
+            <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+              <button className="inline-flex items-center justify-center px-3 py-2 text-sm sm:text-md bg-black text-white rounded-md font-medium shadow-sm">
                 Free Discovery Call
-                <span className="ml-3 inline-flex items-center justify-center w-8 h-8 bg-white/10 rounded">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                <span className="ml-2 sm:ml-3 inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 bg-white/10 rounded">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </span>
               </button>
 
-              <button className="inline-flex items-center px-3 py-2 text-md border border-gray-300 text-gray-800 rounded-md bg-white">
+              <button className="inline-flex items-center justify-center px-3 py-2 text-sm sm:text-md border border-gray-300 text-gray-800 rounded-md bg-white">
                 Explore Our Services
-                <span className="ml-3 inline-flex items-center justify-center w-8 h-8 bg-gray-100 rounded">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                <span className="ml-2 sm:ml-3 inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 bg-gray-100 rounded">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 sm:w-4 sm:h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </span>
               </button>
             </div>

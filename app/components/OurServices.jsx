@@ -62,36 +62,36 @@ export default function OurServices() {
   }, [services.length]);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-white" style={{ minHeight: "250vh" }}>
-      <div className="sticky top-0 max-w-7xl mx-auto px-6 lg:px-8 h-screen flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 w-full items-start">
+    <section ref={sectionRef} className="py-32 sm:py-20 bg-white" style={{ minHeight: "250vh" }}>
+      <div className="sticky top-0 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 h-screen flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-16 w-full items-start">
           {/* Left Column: Title and Services List */}
           <div className="flex flex-col">
-            <div className="mb-10">
-              <p className="text-sm text-gray-500 mb-2">Our Services</p>
-              <h2 className="text-4xl font-extrabold text-gray-900">
+            <div className="mb-6 sm:mb-8 lg:mb-10">
+              <p className="text-xs sm:text-sm text-gray-500 mb-1 sm:mb-2">Our Services</p>
+              <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
                 What We Do Best
               </h2>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-2 sm:space-y-4">
               {services.map((service, index) => (
                 <div
                   key={service.title}
-                  className={`relative overflow-hidden py-3 px-4 transition-all duration-300 ease-in-out ${
+                  className={`relative overflow-hidden py-2 sm:py-3 px-2 sm:px-4 transition-all duration-300 ease-in-out ${
                     index < activeIndex
                       ? "bg-white text-black"
                       : "bg-black text-white"
                   }`}
                 >
-                  <p className="text-xl font-semibold">{service.title}</p>
+                  <p className="text-sm sm:text-lg md:text-xl font-semibold">{service.title}</p>
                 </div>
               ))}
             </div>
             {/* Left-bottom CTA - sits at bottom on large screens */}
-            <div className="mt-6 py-3 px-2">
-              <div className="bg-white text-black  rounded-md max-w-md  ">
-                <p className="text-sm text-gray-600 mb-5">Delivering digital experiences through versatile subscription</p>
-                <a href="#" className="inline-block text-black text-md font-semibold border-b border-black pb-0.5 hover:bg-black hover:text-white">
+            <div className="mt-4 sm:mt-6 py-2 sm:py-3 px-2">
+              <div className="bg-white text-black rounded-md max-w-md">
+                <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-5">Delivering digital experiences through versatile subscription</p>
+                <a href="#" className="inline-block text-black text-sm sm:text-md font-semibold border-b border-black pb-0.5 hover:bg-black hover:text-white">
                   LEARN MORE <span className="ml-2">↗</span>
                 </a>
               </div>
@@ -100,11 +100,11 @@ export default function OurServices() {
 
           {/* Right Column: Quote and Image Parallax */}
           <div className="flex flex-col">
-            <blockquote className="text-gray-600 max-w-lg text-sm mb-10 pt-8">
-              “We help brands stand out in the digital space through beautifully crafted user
-              experiences and strategic design thinking.”
+            <blockquote className="text-gray-600 max-w-lg text-xs sm:text-sm mb-6 sm:mb-8 lg:mb-10 pt-4 sm:pt-8">
+              "We help brands stand out in the digital space through beautifully crafted user
+              experiences and strategic design thinking."
             </blockquote>
-            <div className="relative h-[450px] w-full overflow-hidden rounded-2xl shadow-2xl">
+            <div className="relative h-[300px] sm:h-[400px] lg:h-[450px] w-full overflow-hidden rounded-md shadow-xl sm:shadow-2xl">
               {services.map((service, index) => {
                 const isActive = index === activeIndex;
                 const isPassed = index < activeIndex;
@@ -129,10 +129,10 @@ export default function OurServices() {
                           className="w-full h-full object-cover"
                         />
                         {/* overlay visible by default with black gradient; lifts slightly on hover */}
-                        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent translate-y-0 transition-transform duration-300 ease-in-out z-20 group-hover:-translate-y-3">
-                          <h3 className="text-white text-xl font-semibold mb-2">{service.title}</h3>
-                          <p className="text-white text-base mb-4">{service.description}</p>
-                          <button className="bg-white text-black font-semibold py-2 px-4 rounded-full">
+                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/90 to-transparent translate-y-0 transition-transform duration-300 ease-in-out z-20 group-hover:-translate-y-3">
+                          <h3 className="text-white text-base sm:text-lg md:text-xl font-semibold mb-1 sm:mb-2">{service.title}</h3>
+                          <p className="text-white text-sm sm:text-base mb-2 sm:mb-4">{service.description}</p>
+                          <button className="bg-white text-black font-semibold py-1.5 px-3 sm:py-2 sm:px-4 text-sm sm:text-base rounded-full">
                             Read More
                           </button>
                         </div>
