@@ -165,6 +165,53 @@
   animation-play-state: paused;
 }
 
+/* Scroll-triggered slide-in animations for Why Choose Us cards */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-1 {
+  animation: slideInFromRight 0.6s ease-out 0.1s forwards;
+}
+
+.animate-slide-in-2 {
+  animation: slideInFromRight 0.6s ease-out 0.3s forwards;
+}
+
+.animate-slide-in-3 {
+  animation: slideInFromRight 0.6s ease-out 0.5s forwards;
+}
+
+.animate-slide-in-4 {
+  animation: slideInFromRight 0.6s ease-out 0.7s forwards;
+}
+
+/* Image trail burst for Contact CTA */
+@keyframes trailPop {
+  0% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(0.7) rotate(var(--rot, 0deg));
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25) rotate(var(--rot, 0deg));
+    filter: blur(2px);
+  }
+}
+
+.trail-burst {
+  animation: trailPop 800ms ease-out forwards;
+  will-change: transform, opacity, filter;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(0% 0 0);
