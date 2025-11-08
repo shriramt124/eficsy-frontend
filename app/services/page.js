@@ -130,7 +130,7 @@ function ServicesHero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center">
           <h1 
             ref={titleRef}
-            className="lg:col-span-7 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight"
+            className="lg:col-span-7 text-3xl sm:text-4xl md:text-5xl   font-extrabold leading-[1.05] tracking-tight"
           >
             {splitText("Transform your business with data-driven solutions and intelligent automation")}
           </h1>
@@ -138,7 +138,7 @@ function ServicesHero() {
           <div className="lg:col-span-5 space-y-4 sm:space-y-6">
             <p 
               ref={subtitleRef}
-              className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed"
+              className="text-xs sm:text-lg md:text-md text-gray-700 leading-relaxed"
             >
               We specialize in data engineering, advanced analytics, cutting-edge design, 
               AI strategy, and intelligent automation to help your business innovate, 
@@ -148,14 +148,14 @@ function ServicesHero() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-black text-white rounded-xl font-semibold text-sm sm:text-base hover:bg-gray-800 transition-all hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-black text-white rounded-xl font-semibold text-sm   hover:bg-gray-800 transition-all hover:scale-105"
               >
                 Get Started
                 <ArrowUpRightIcon className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-black text-black rounded-xl font-semibold text-sm sm:text-base hover:bg-black hover:text-white transition-all"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-black text-black rounded-xl font-semibold text-sm   hover:bg-black hover:text-white transition-all"
               >
                 View Services
               </a>
@@ -167,33 +167,7 @@ function ServicesHero() {
   );
 }
  
-
-function ParallaxMedia({ image, title, imageLeft, visible }) {
-  const wrapRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: wrapRef, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
-
-  return (
-    <div
-      ref={wrapRef}
-      className={`relative w-full h-72 sm:h-80 lg:h-[460px] overflow-hidden rounded-2xl bg-gray-100 ${
-        imageLeft ? "lg:order-1" : ""
-      }`}
-    >
-      {image && (
-        <motion.div style={{ y }} className="absolute inset-0">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className={`object-cover transition-transform duration-[1200ms] ${visible ? "scale-100" : "scale-105"}`}
-            priority={false}
-          />
-        </motion.div>
-      )}
-    </div>
-  );
-}
+ 
 
 export default function ServicesPage() {
   const sections = useMemo(
@@ -383,13 +357,13 @@ function ServiceStackCard({ index, count, progress, id, label, title, descriptio
             {/* Content column */}
             <div className="max-w-xl">
               <div className="inline-block bg-black text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-md mb-3 sm:mb-4">
-                <span className="text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-semibold">{label}</span>
+                <span className="text-[10px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] font-semibold">{label}</span>
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight mb-2 sm:mb-3">{title}</h3>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 mb-4 sm:mb-5">{description}</p>
+              <h3 className="text-xl sm:text-2xl md:text-3xl   font-extrabold leading-tight mb-2 sm:mb-3">{title}</h3>
+              <p className="text-sm sm:text-base lg:text-lg text-gray-700 mb-3">{description}</p>
 
               {!!(bullets && bullets.length) && (
-                <ul className="space-y-2 sm:space-y-3 mb-5 sm:mb-6">
+                <ul className="space-y-2 sm:space-y-2 mb-5 sm:mb-6">
                   {bullets.slice(0, 6).map((b, idx) => (
                     <li key={idx} className="flex items-start gap-2 sm:gap-3">
                       <span className="mt-1.5 sm:mt-2 h-1 w-1 sm:h-1.5 sm:w-1.5 rounded-full bg-black shrink-0" />
