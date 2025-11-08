@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Metrics() {
   const stats = [
-    { id: 1, value: "120+", label: "Projects Delivered", bg: "bg-blue-50" },
-    { id: 2, value: "35+", label: "Happy Clients Worldwide", bg: "bg-pink-50" },
+    { id: 1, value: "20+", label: "Projects Delivered", bg: "bg-blue-50" },
+    { id: 2, value: "10+", label: "Happy Clients Worldwide", bg: "bg-pink-50" },
     { id: 3, value: "02+", label: "Years of Experience", bg: "bg-green-50" },
-    { id: 4, value: "99%", label: "Client Satisfaction", bg: "bg-yellow-50" },
+    { id: 4, value: "98%", label: "Client Satisfaction", bg: "bg-yellow-50" },
   ];
 
   return (
