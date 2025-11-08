@@ -5,7 +5,15 @@
 @import "tw-animate-css";
 
 * {
-  font-family: 'Brandon Grotesque', sans-serif;
+  font-family: 'Brandon Grotesque', sans-serif !important;
+}
+
+body {
+  font-family: 'Brandon Grotesque', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, label {
+  font-family: 'Brandon Grotesque', sans-serif !important;
 }
 
 @theme inline {
