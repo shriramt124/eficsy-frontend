@@ -1,3 +1,4 @@
+
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
@@ -124,18 +125,18 @@ function AboutHero() {
             <div ref={tagRef} className="mb-4 sm:mb-6">
               <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700">
                 <span className="w-2 h-2 rounded-full bg-orange-500 inline-block" />
-                ABOUT US
+                ABOUT EFICSY
               </span>
             </div>
 
             <h1 ref={titleRef} className="font-extrabold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-black mb-6 sm:mb-8 md:mb-12">
-              {splitText("Unlock your brand's potential with our creative solutions.")}
+              {splitText("Transforming Data into Your Greatest Competitive Advantage")}
             </h1>
 
             <div ref={ctaRef} className="mb-8 sm:mb-10 md:mb-12">
-              <a href="#contact" className="relative inline-flex items-center gap-2 sm:gap-3 bg-black text-white font-semibold text-xs sm:text-sm md:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-full overflow-hidden group transition-all hover:scale-105">
+              <a href="/contact" className="relative inline-flex items-center gap-2 sm:gap-3 bg-black text-white font-semibold text-xs sm:text-sm md:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-full overflow-hidden group transition-all hover:scale-105">
                 <span className="absolute inset-0 bg-orange-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
-                <span className="relative z-10">BOOK A CALL</span>
+                <span className="relative z-10">START YOUR PROJECT</span>
                 <span aria-hidden className="relative z-10 ml-1">↗</span>
               </a>
             </div>
@@ -146,13 +147,13 @@ function AboutHero() {
             <div ref={videoRef} className="w-full sm:w-5/6 mx-auto rounded-xl overflow-hidden shadow-lg">
               <img
                 className="object-cover w-full h-[200px] sm:h-[250px] md:h-[300px]"
-                src="slideimage1.jpg"
-                alt="About our team"
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+                alt="Data analytics and AI solutions"
               />
             </div>
 
             <p ref={descRef} className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed px-2 sm:px-0">
-              Our services help you create digital products and solve your problems objectively, strategy, technology and analysis.
+              We're a data-driven technology consultancy specializing in engineering robust data pipelines, delivering actionable analytics, building intelligent AI automations, and crafting beautiful digital experiences that scale.
             </p>
           </div>
         </div>
@@ -206,8 +207,8 @@ function WhoWeAre() {
         <div className="order-2 lg:order-1 overflow-hidden rounded-3xl">
           <div ref={imageRef} className="transform scale-110">
             <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
-              alt="Team collaboration"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+              alt="Data engineering and analytics team"
               className="w-full h-[400px] object-cover"
             />
           </div>
@@ -222,11 +223,11 @@ function WhoWeAre() {
           </div>
 
           <h2 className="reveal-item text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-            <span className="text-orange-500">eficsy</span> we believe that creativity isn't just about visuals — it's about creating meaning.
+            At <span className="text-orange-500">eficsy</span>, we don't just build what you ask for—we help you discover what you truly need.
           </h2>
 
           <p className="reveal-item text-gray-600 text-lg leading-relaxed">
-            We are a multidisciplinary creative agency focused on building brands that leave a lasting impression through intentional strategy.
+            We're a team of data engineers, AI strategists, analysts, and full-stack developers passionate about transforming complex data challenges into measurable business outcomes. From robust data infrastructure to intelligent automation and stunning digital products, we deliver end-to-end solutions that scale.
           </p>
         </div>
       </div>
@@ -245,13 +246,13 @@ function StatsSection() {
     const ctx = gsap.context(() => {
       // Counter animations
       const counters = [
-        { ref: stat1Ref, end: 95, suffix: "%" },
-        { ref: stat2Ref, end: 10, suffix: "+" },
-        { ref: stat3Ref, end: 10, suffix: "m", prefix: "$" }
+        { ref: stat1Ref, end: 50, suffix: "+" },
+        { ref: stat2Ref, end: 100, suffix: "%" },
+        { ref: stat3Ref, end: 24, suffix: "/7" }
       ];
 
       counters.forEach(({ ref, end, suffix = "", prefix = "" }) => {
-        if (!ref.current) return; // Add null check
+        if (!ref.current) return;
         
         gsap.fromTo(ref.current,
           { innerHTML: 0 },
@@ -261,7 +262,7 @@ function StatsSection() {
             ease: "power2.out",
             snap: { innerHTML: 1 },
             onUpdate: function() {
-              if (ref.current) { // Add null check in onUpdate
+              if (ref.current) {
                 ref.current.innerHTML = prefix + Math.ceil(this.targets()[0].innerHTML) + suffix;
               }
             },
@@ -300,7 +301,7 @@ function StatsSection() {
         {/* Main Heading */}
         <div className="mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight max-w-3xl">
-            With over a decade of experience, we deliver tailored solutions that empower your business to grow.
+            Proven expertise in data engineering, AI automation, analytics, and modern web & mobile development.
           </h2>
         </div>
 
@@ -309,30 +310,30 @@ function StatsSection() {
           {/* Stat 1 */}
           <div className="stat-card bg-white/5 backdrop-blur rounded-3xl p-8 hover:bg-white/10 transition-all">
             <p className="text-xs text-gray-400 uppercase tracking-wider mb-6">
-              COMPLETE CUSTOMER<br />SATISFACTION
+              SUCCESSFUL PROJECTS<br />DELIVERED
             </p>
             <p ref={stat1Ref} className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-orange-400 to-pink-600 bg-clip-text text-transparent">
-              0%
+              0+
             </p>
           </div>
 
           {/* Stat 2 */}
           <div className="stat-card bg-white/5 backdrop-blur rounded-3xl p-8 hover:bg-white/10 transition-all">
             <p className="text-xs text-gray-400 uppercase tracking-wider mb-6">
-              INNOVATION AND<br />VALUABLE INSIGHT
+              CLIENT SATISFACTION<br />RATE
             </p>
             <p ref={stat2Ref} className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-              0+
+              0%
             </p>
           </div>
 
           {/* Stat 3 */}
           <div className="stat-card bg-white/5 backdrop-blur rounded-3xl p-8 hover:bg-white/10 transition-all">
             <p className="text-xs text-gray-400 uppercase tracking-wider mb-6">
-              HIGHLY EFFICIENT<br />FINANCIAL STRATEGIES
+              DEDICATED EXPERT<br />SUPPORT
             </p>
             <p ref={stat3Ref} className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent">
-              $0m
+              0/7
             </p>
           </div>
         </div>
@@ -385,7 +386,7 @@ function VisionSection() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="mb-4">
           <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">
-            ( our vision)
+            (OUR VISION)
           </span>
         </div>
 
@@ -393,17 +394,17 @@ function VisionSection() {
           {/* Left: Content */}
           <div ref={contentRef} className="flex flex-col justify-between">
             <div>
-              <h2 className="reveal-line text-4xl  font-semibold leading-tight mb-6">
-                More Than Just Designers—We're Your Creative Growth Partner
+              <h2 className="reveal-line text-4xl font-semibold leading-tight mb-6">
+                Your Strategic Partner for Data-Driven Innovation and Digital Excellence
               </h2>
 
               <p className="reveal-line text-gray-600 text-md mb-8 max-w-xl">
-                With years of experience and a proven track record, we work closely with startups, enterprises, and agencies to deliver meaningful digital solutions.
+                We combine cutting-edge data engineering, AI strategy, advanced analytics, and exceptional design & development to help businesses unlock new opportunities, optimize operations, and build products that users love.
               </p>
 
-              <a href="#work" className="reveal-line relative inline-flex items-center justify-center text-sm bg-black text-white font-semibold px-6 py-3 rounded-full overflow-hidden group transition-all hover:scale-105">
+              <a href="/services" className="reveal-line relative inline-flex items-center justify-center text-sm bg-black text-white font-semibold px-6 py-3 rounded-full overflow-hidden group transition-all hover:scale-105">
                 <span className="absolute inset-0 bg-orange-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
-                <span className="relative z-10">View Our Work</span>
+                <span className="relative z-10">Explore Our Services</span>
               </a>
             </div>
 
@@ -412,14 +413,14 @@ function VisionSection() {
               <div className="reveal-line bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <h3 className="text-xl font-bold mb-3">Our Mission</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  To help businesses grow through thoughtful, user-centered design that performs with purpose.
+                  To empower businesses through intelligent data solutions, AI automation, and beautifully crafted digital products that drive measurable impact and sustainable growth.
                 </p>
               </div>
 
               <div className="reveal-line bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <h3 className="text-xl font-bold mb-3">Our Vision</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  To be the go-to creative partner for brands who want to lead with innovation and create lasting impact.
+                  To be the trusted technology partner for forward-thinking companies looking to lead with data, automate intelligently, and create digital experiences that matter.
                 </p>
               </div>
             </div>
@@ -429,8 +430,8 @@ function VisionSection() {
           <div className="overflow-hidden rounded-3xl">
             <div ref={imageRef} className="transform">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
-                alt="Team working together"
+                src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80"
+                alt="Modern technology and innovation"
                 className="w-full h-[500px] object-cover"
               />
             </div>
@@ -471,15 +472,21 @@ function TeamSection() {
   const teamMembers = [
     {
       id: 1,
-      name: "Sara Steiniger",
-      role: "Co-founder & Art Director",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=500&fit=crop"
+      name: "Our Data Engineers",
+      role: "Building Scalable Data Infrastructure",
+      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=500&q=80"
     },
     {
       id: 2,
-      name: "Perfiroa Lopaz",
-      role: "Creative Director",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop"
+      name: "Our AI Strategists",
+      role: "Driving Intelligent Automation",
+      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      id: 3,
+      name: "Our Developers",
+      role: "Crafting Exceptional Digital Experiences",
+      image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=80"
     }
   ];
 
@@ -492,16 +499,16 @@ function TeamSection() {
             <div className="mb-6">
               <span className="inline-flex items-center gap-3 text-sm text-gray-700">
                 <span className="w-2 h-2 rounded-full bg-orange-500 inline-block" />
-                OUR TEAM
+                OUR EXPERTISE
               </span>
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-              Meet our creative <span className="text-gray-400">collective</span>
+              Meet the experts behind <span className="text-gray-400">your success</span>
             </h2>
           </div>
           <div className="max-w-md">
             <p className="text-gray-600 text-base">
-              Our service also has a high appeal because it has a beautiful color combination and a minimalist concept.
+              A multidisciplinary team of data engineers, AI specialists, analysts, and creative developers dedicated to delivering excellence.
             </p>
           </div>
         </div>
@@ -545,11 +552,6 @@ function TeamSection() {
                     <span className="font-semibold">{member.role}</span>
                   </p>
                 </div>
-                <div className="flex items-center gap-4">
-                  <a href="#" className="text-sm font-semibold underline transition-colors group-hover:text-white duration-700">INSTAGRAM</a>
-                  <a href="#" className="text-sm font-semibold underline transition-colors group-hover:text-white duration-700">X</a>
-                  <a href="#" className="text-sm font-semibold underline transition-colors group-hover:text-white duration-700">LINKEDIN</a>
-                </div>
               </div>
             </div>
           ))}
@@ -585,24 +587,24 @@ export function WhyChooseUs() {
 
   const cards = [
     {
-      title: "Intentional Design",
+      title: "End-to-End Solutions",
       desc:
-        "We craft brands that are not just beautiful but meaningful — grounded in mission.",
+        "From data pipelines to AI automation to beautiful apps—we handle the complete technology stack so you don't have to juggle multiple vendors.",
     },
     {
-      title: "Strategic Thinking",
+      title: "Data-Driven Strategy",
       desc:
-        "We align design with business objectives so every pixel moves you forward.",
+        "We don't just build—we analyze, strategize, and align every solution with your business objectives for maximum ROI.",
     },
     {
-      title: "Creative Precision",
+      title: "Cutting-Edge Technology",
       desc:
-        "We obsess over details to deliver work that looks great and performs.",
+        "We leverage the latest in cloud infrastructure, AI/ML frameworks, and modern development practices to keep you ahead of the curve.",
     },
     {
-      title: "Collaborative Process",
+      title: "Scalable & Secure",
       desc:
-        "We partner closely with your team to iterate fast and ship with confidence.",
+        "Every solution we deliver is built to scale with your growth and secured with industry best practices and compliance standards.",
     },
   ];
 
@@ -623,7 +625,7 @@ export function WhyChooseUs() {
             </h2>
             <button className="relative inline-flex items-center gap-3 bg-orange-500 text-white font-semibold text-sm px-6 py-3 rounded-full overflow-hidden group transition-all hover:scale-105">
               <span className="absolute inset-0 bg-black transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
-              <span className="relative z-10">View Details</span>
+              <span className="relative z-10">View Our Work</span>
               <span className="relative z-10 inline-block rotate-45">↗</span>
             </button>
           </div>
@@ -661,9 +663,9 @@ export function ContactCTA() {
   const containerRef = useRef(null);
   const [trail, setTrail] = useState([]);
   const images = [
-    "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=200&q=60&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200&q=60&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1544006659-f0b21884ce1d?w=200&q=60&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&q=60&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=200&q=60&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&q=60&auto=format&fit=crop",
   ];
 
   const lastTs = useRef(0);
@@ -727,18 +729,18 @@ export function ContactCTA() {
               <path d="M1.5 6.75A2.25 2.25 0 0 1 3.75 4.5h16.5a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 20.25 19.5H3.75A2.25 2.25 0 0 1 1.5 17.25V6.75Zm2.7-.75 7.05 5.287a.75.75 0 0 0 .9 0L19.2 6h-15Z" />
             </svg>
           </span>
-          CONTACT
+          LET'S TALK
         </div>
         <h2 className="relative font-extrabold tracking-tight leading-tight text-4xl sm:text-6xl md:text-7xl lg:text-[72px] mb-10">
-          Have any project idea
-          <br className="hidden sm:block" /> in your mind?
+          Ready to transform your
+          <br className="hidden sm:block" /> data into results?
         </h2>
         <a
           href="/contact"
           className="relative inline-flex items-center gap-2 bg-black text-white font-semibold px-8 sm:px-10 py-4 sm:py-5 rounded-full overflow-hidden group transition-all hover:scale-105 text-base sm:text-lg"
         >
           <span className="absolute inset-0 bg-orange-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
-          <span className="relative z-10">Contact Now</span>
+          <span className="relative z-10">Start Your Project</span>
           <span className="relative z-10 inline-block transition-transform group-hover:translate-x-0.5">↗</span>
         </a>
       </div>
@@ -759,6 +761,3 @@ export default function AboutPage() {
     </main>
   );
 }
-
-        
-         
