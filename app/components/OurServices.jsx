@@ -62,7 +62,7 @@ export default function OurServices() {
   }, [services.length]);
 
   return (
-    <section ref={sectionRef} className="pt-16 sm:pt-20 md:pt-24 lg:pt-32 pb-32 sm:pb-20 bg-white" style={{ minHeight: "250vh" }}>
+    <section ref={sectionRef} className="pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-32 sm:pb-20 bg-white" style={{ minHeight: "250vh" }}>
       <div className="sticky top-0 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 h-screen flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-16 w-full items-start">
           {/* Left Column: Title and Services List */}

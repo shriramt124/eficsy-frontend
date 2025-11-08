@@ -1,8 +1,8 @@
+/* Brandon Grotesque Font - Import first to avoid hydration issues */
+@import url('https://fonts.cdnfonts.com/css/brandon-grotesque-regular');
+
 @import "tailwindcss";
 @import "tw-animate-css";
-
-/* Brandon Grotesque Font */
-@import url('https://fonts.cdnfonts.com/css/brandon-grotesque-regular');
 
 * {
   font-family: 'Brandon Grotesque', sans-serif;
