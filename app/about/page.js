@@ -124,16 +124,16 @@ function AboutHero() {
           <div className="lg:col-span-8">
             <div ref={tagRef} className="mb-4 sm:mb-6">
               <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700">
-                <span className="w-2 h-2 rounded-full bg-orange-500 inline-block" />
-                ABOUT EFICSY
+                <span className="w-2 h-2 rounded-full bg-black inline-block" />
+                 <span> About efic <span className="w-2 h-2 rounded-full bg-green-800 inline-block" /> sy </span>  
               </span>
             </div>
 
-            <h1 ref={titleRef} className="font-extrabold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-black mb-6 sm:mb-8 md:mb-12">
+            <h1 ref={titleRef} className="font-extrabold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-black mb-6 sm:mb-8 md:mb-12 lg:mt-12">
               {splitText("Transforming Data into Your Greatest Competitive Advantage")}
             </h1>
 
-            <div ref={ctaRef} className="mb-8 sm:mb-10 md:mb-12">
+            <div ref={ctaRef} className="mb-8 sm:mb-10 md:mb-12 sm:mt-[100px]">
               <a href="/contact" className="relative inline-flex items-center gap-2 sm:gap-3 bg-black text-white font-semibold text-xs sm:text-sm md:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-full overflow-hidden group transition-all hover:scale-105">
                 <span className="absolute inset-0 bg-orange-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
                 <span className="relative z-10">START YOUR PROJECT</span>
@@ -143,16 +143,16 @@ function AboutHero() {
           </div>
 
           {/* Right: Image + Description */}
-          <div className="lg:col-span-4 flex flex-col gap-4 sm:gap-6 mt-0 lg:mt-[150px]">
-            <div ref={videoRef} className="w-full sm:w-5/6 mx-auto rounded-xl overflow-hidden">
+          <div className="lg:col-span-4 flex flex-col gap-4 sm:gap-4 mt-0 lg:mt-[150px]">
+            <div ref={videoRef} className=" w-full rounded-md mx-auto  overflow-hidden">
               <img
-                className="object-cover w-full h-[200px] sm:h-[250px] md:h-[300px]"
+                className="object-cover"
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
                 alt="Data analytics and AI solutions"
               />
             </div>
 
-            <p ref={descRef} className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed px-2 sm:px-0">
+            <p ref={descRef} className="text-gray-700 text-xs sm:text-sm  leading-relaxed px-2 sm:px-0">
               We're a data-driven technology consultancy specializing in engineering robust data pipelines, delivering actionable analytics, building intelligent AI automations, and crafting beautiful digital experiences that scale.
             </p>
           </div>
@@ -204,7 +204,7 @@ function WhoWeAre() {
     <section ref={sectionRef} className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left: Image with parallax */}
-        <div className="order-2 lg:order-1 overflow-hidden rounded-3xl">
+        <div className="order-2 lg:order-1 overflow-hidden rounded-xl">
           <div ref={imageRef} className="transform scale-110">
             <img
               src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
@@ -216,17 +216,17 @@ function WhoWeAre() {
 
         {/* Right: Content */}
         <div ref={contentRef} className="order-1 lg:order-2">
-          <div className="reveal-item mb-4">
-            <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">
+          <div className="reveal-item">
+            <span className="text-xs  font-medium text-gray-600 uppercase tracking-wide">
               (WHO WE ARE)
             </span>
           </div>
 
           <h2 className="reveal-item text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-            At <span className="text-orange-500">eficsy</span>, we don't just build what you ask for—we help you discover what you truly need.
+            At <span className="text-black-500">eficsy</span>, we don't just build what you ask for—we help you discover what you truly need.
           </h2>
 
-          <p className="reveal-item text-gray-600 text-lg leading-relaxed">
+          <p className="reveal-item text-gray-600 text-md leading-relaxed">
             We're a team of data engineers, AI strategists, analysts, and full-stack developers passionate about transforming complex data challenges into measurable business outcomes. From robust data infrastructure to intelligent automation and stunning digital products, we deliver end-to-end solutions that scale.
           </p>
         </div>
@@ -313,7 +313,7 @@ function StatsSection() {
               SUCCESSFUL PROJECTS<br />DELIVERED
             </p>
             <p ref={stat1Ref} className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-orange-400 to-pink-600 bg-clip-text text-transparent">
-              0+
+              20+
             </p>
           </div>
 
@@ -323,7 +323,7 @@ function StatsSection() {
               CLIENT SATISFACTION<br />RATE
             </p>
             <p ref={stat2Ref} className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-              0%
+              98%
             </p>
           </div>
 
@@ -333,7 +333,7 @@ function StatsSection() {
               DEDICATED EXPERT<br />SUPPORT
             </p>
             <p ref={stat3Ref} className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent">
-              0/7
+              24/7
             </p>
           </div>
         </div>
@@ -398,27 +398,27 @@ function VisionSection() {
                 Your Strategic Partner for Data-Driven Innovation and Digital Excellence
               </h2>
 
-              <p className="reveal-line text-gray-600 text-md mb-8 max-w-xl">
+              <p className="reveal-line text-gray-600 text-sm mb-8 max-w-xl">
                 We combine cutting-edge data engineering, AI strategy, advanced analytics, and exceptional design & development to help businesses unlock new opportunities, optimize operations, and build products that users love.
               </p>
 
-              <a href="/services" className="reveal-line relative inline-flex items-center justify-center text-sm bg-black text-white font-semibold px-6 py-3 rounded-full overflow-hidden group transition-all hover:scale-105">
+              <a href="/services" className="reveal-line relative inline-flex items-center justify-center text-xs bg-black text-white font-semibold px-4 py-2 rounded-full overflow-hidden group transition-all hover:scale-105">
                 <span className="absolute inset-0 bg-orange-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
                 <span className="relative z-10">Explore Our Services</span>
               </a>
             </div>
 
             {/* Mission and Vision Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-5">
-              <div className="reveal-line bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <h3 className="text-xl font-bold mb-3">Our Mission</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-4">
+              <div className="reveal-line bg-white rounded-xl p-4 shadow-lg hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-bold mb-2">Our Mission</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   To empower businesses through intelligent data solutions, AI automation, and beautifully crafted digital products that drive measurable impact and sustainable growth.
                 </p>
               </div>
 
-              <div className="reveal-line bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <h3 className="text-xl font-bold mb-3">Our Vision</h3>
+              <div className="reveal-line bg-white rounded-xl p-4 shadow-lg hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-bold mb-2">Our Vision</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   To be the trusted technology partner for forward-thinking companies looking to lead with data, automate intelligently, and create digital experiences that matter.
                 </p>
@@ -427,7 +427,7 @@ function VisionSection() {
           </div>
 
           {/* Right: Image with parallax */}
-          <div className="overflow-hidden rounded-3xl">
+          <div className="overflow-hidden rounded-2xl">
             <div ref={imageRef} className="transform">
               <img
                 src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80"
