@@ -169,7 +169,7 @@ export default function OurServices() {
                         </p>
                         <button className="relative inline-flex items-center justify-center bg-black text-white font-semibold py-1.5 px-3 sm:py-2 sm:px-4 text-sm sm:text-base rounded-full overflow-hidden group">
                           <span className="absolute inset-0 bg-green-700 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
-                          <span className="relative z-10 transition-colors duration-500">Read More</span>
+                          <span className="relative z-10">Read More</span>
                         </button>
                       </div>
                     </div>
