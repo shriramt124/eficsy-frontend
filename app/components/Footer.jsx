@@ -52,7 +52,7 @@ export default function Footer() {
                 className="inline-flex items-center gap-2 sm:gap-3 bg-white text-black px-4 sm:px-5 py-2 sm:py-3 text-sm sm:text-base rounded-full font-semibold hover:bg-gray-100 transition"
               >
                 Let's talk
-                <span className="inline-block w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-orange-500" />
+                <span className="inline-block w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-green-800" />
               </a>
             </div>
           </div>

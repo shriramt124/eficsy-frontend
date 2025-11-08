@@ -135,7 +135,7 @@ function AboutHero() {
 
             <div ref={ctaRef} className="mb-8 sm:mb-10 md:mb-12 sm:mt-[100px]">
               <a href="/contact" className="relative inline-flex items-center gap-2 sm:gap-3 bg-black text-white font-semibold text-xs sm:text-sm md:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-full overflow-hidden group transition-all hover:scale-105">
-                <span className="absolute inset-0 bg-orange-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
+                <span className="absolute inset-0 bg-green-800 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
                 <span className="relative z-10">START YOUR PROJECT</span>
                 <span aria-hidden className="relative z-10 ml-1">↗</span>
               </a>
@@ -312,7 +312,7 @@ function StatsSection() {
             <p className="text-xs text-gray-400 uppercase tracking-wider mb-6">
               SUCCESSFUL PROJECTS<br />DELIVERED
             </p>
-            <p ref={stat1Ref} className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-orange-400 to-pink-600 bg-clip-text text-transparent">
+            <p ref={stat1Ref} className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent">
               20+
             </p>
           </div>
@@ -403,7 +403,7 @@ function VisionSection() {
               </p>
 
               <a href="/services" className="reveal-line relative inline-flex items-center justify-center text-xs bg-black text-white font-semibold px-4 py-2 rounded-full overflow-hidden group transition-all hover:scale-105">
-                <span className="absolute inset-0 bg-orange-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
+                <span className="absolute inset-0 bg-green-800 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
                 <span className="relative z-10">Explore Our Services</span>
               </a>
             </div>
@@ -498,7 +498,7 @@ function TeamSection() {
           <div>
             <div className="mb-6">
               <span className="inline-flex items-center gap-3 text-sm text-gray-700">
-                <span className="w-2 h-2 rounded-full bg-orange-500 inline-block" />
+                <span className="w-2 h-2 rounded-full bg-green-800 inline-block" />
                 OUR EXPERTISE
               </span>
             </div>
@@ -616,14 +616,14 @@ export function WhyChooseUs() {
           <div className="lg:sticky lg:top-1/2 lg:-translate-y-1/2 self-start">
             <div className="mb-6 mt-20">
               <span className="inline-flex items-center gap-3 text-sm text-gray-300">
-                <span className="w-2 h-2 rounded-full bg-orange-500 inline-block" />
+                <span className="w-2 h-2 rounded-full bg-green-800 inline-block" />
                 WHY CHOOSE US
               </span>
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-8">
               The <span style={{ fontFamily: "'Brandon Grotesque', sans-serif" }}>Eficsy</span> Advantage
             </h2>
-            <button className="relative inline-flex items-center gap-3 bg-orange-500 text-white font-semibold text-sm px-6 py-3 rounded-full overflow-hidden group transition-all hover:scale-105">
+            <button className="relative inline-flex items-center gap-3 bg-green-800 text-white font-semibold text-sm px-6 py-3 rounded-full overflow-hidden group transition-all hover:scale-105">
               <span className="absolute inset-0 bg-black transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
               <span className="relative z-10">View Our Work</span>
               <span className="relative z-10 inline-block rotate-45">↗</span>
@@ -723,9 +723,9 @@ export function ContactCTA() {
 
       <div className="relative max-w-5xl mx-auto px-6 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-sm font-semibold text-white mb-6">
-          <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white text-white">
+          <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-800 text-white">
             {/* envelope icon */}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" className="w-4 h-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-4 h-4">
               <path d="M1.5 6.75A2.25 2.25 0 0 1 3.75 4.5h16.5a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 20.25 19.5H3.75A2.25 2.25 0 0 1 1.5 17.25V6.75Zm2.7-.75 7.05 5.287a.75.75 0 0 0 .9 0L19.2 6h-15Z" />
             </svg>
           </span>
@@ -739,7 +739,7 @@ export function ContactCTA() {
           href="/contact"
           className="relative inline-flex items-center gap-2 bg-black text-white font-semibold px-8 sm:px-10 py-4 sm:py-5 rounded-full overflow-hidden group transition-all hover:scale-105 text-base sm:text-lg"
         >
-          <span className="absolute inset-0 bg-orange-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
+          <span className="absolute inset-0 bg-green-800 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
           <span className="relative z-10">Start Your Project</span>
           <span className="relative z-10 inline-block transition-transform group-hover:translate-x-0.5">↗</span>
         </a>

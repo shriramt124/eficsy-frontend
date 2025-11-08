@@ -52,7 +52,7 @@ export default function ContactUs() {
             </p>
             <div className="pt-2 sm:pt-4">
               <p className="text-gray-400 mb-1 sm:mb-2 text-xs sm:text-sm">Mail us at</p>
-              <a href="mailto:info@eficsy.com" className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-black hover:text-orange-300 transition-colors">
+              <a href="mailto:info@eficsy.com" className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-black hover:text-green-700 transition-colors">
                 info@eficsy.com
               </a>
             </div>
