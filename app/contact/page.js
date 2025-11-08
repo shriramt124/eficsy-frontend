@@ -57,7 +57,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   placeholder="Full Name"
                   required
-                  className="w-full bg-white border-none rounded-xl px-4 py-3 placeholder-gray-400 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-violet-100 shadow-sm"
+                  className="w-full bg-white border-none rounded-xl px-4 py-3 placeholder-gray-400 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent shadow-sm"
                 />
               </div>
               <div>
@@ -69,7 +69,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   placeholder="Email address"
                   required
-                  className="w-full bg-white border-none rounded-xl px-4 py-3 placeholder-gray-400 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-violet-100 shadow-sm"
+                  className="w-full bg-white border-none rounded-xl px-4 py-3 placeholder-gray-400 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent shadow-sm"
                 />
               </div>
               <div>
@@ -81,7 +81,7 @@ export default function ContactPage() {
                   placeholder="Message..."
                   rows={5}
                   required
-                  className="w-full bg-white border-none rounded-xl px-4 py-3 placeholder-gray-400 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-violet-100 resize-none shadow-sm"
+                  className="w-full bg-white border-none rounded-xl px-4 py-3 placeholder-gray-400 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none shadow-sm"
                 />
               </div>
               <div>

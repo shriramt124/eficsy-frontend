@@ -20,12 +20,31 @@ export default function ContactUs() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    // fake submit for now
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    
+    try {
+      const response = await fetch('/api/v1/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.ok) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", project: "", services: [] });
+        setTimeout(() => setSubmitted(false), 4000);
+      } else {
+        alert('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred. Please try again.');
+    }
   };
 
   return (
@@ -78,7 +97,7 @@ export default function ContactUs() {
                     placeholder="Your name"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="w-full border border-black/8 rounded-lg px-2 sm:px-3 py-2 sm:py-3 text-xs sm:text-sm text-black placeholder-gray/500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition"
+                    className="w-full border border-black/8 rounded-lg px-2 sm:px-3 py-2 sm:py-3 text-xs sm:text-sm text-black placeholder-gray/500 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent transition"
                   />
                 </div>
                 <div>
@@ -88,7 +107,7 @@ export default function ContactUs() {
                     placeholder="Email"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="w-full border border-black/8 rounded-lg px-2 sm:px-3 py-2 sm:py-3 text-xs sm:text-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition"
+                    className="w-full border border-black/8 rounded-lg px-2 sm:px-3 py-2 sm:py-3 text-xs sm:text-sm text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent transition"
                   />
                 </div>
               </div>
@@ -100,7 +119,7 @@ export default function ContactUs() {
                   value={formData.project}
                   onChange={(e) => setFormData({...formData, project: e.target.value})}
                   rows="4"
-                  className="w-full border border-black/8 rounded-lg px-2 sm:px-3 py-2 sm:py-3 text-xs sm:text-sm text-black placeholder-black/50 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition resize-none"
+                  className="w-full border border-black/8 rounded-lg px-2 sm:px-3 py-2 sm:py-3 text-xs sm:text-sm text-black placeholder-black/50 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent transition resize-none"
                 ></textarea>
               </div>
 
@@ -122,7 +141,7 @@ export default function ContactUs() {
                         type="checkbox"
                         checked={formData.services.includes(service)}
                         onChange={() => handleCheckbox(service)}
-                        className="w-4 h-4 rounded border-white/20 bg-black/20 text-black focus:ring-orange-300"
+                        className="w-4 h-4 rounded border-white/20 bg-black/20 text-green-600 focus:ring-green-500"
                       />
                       <span className="text-black text-xs">{service}</span>
                     </label>
