@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
@@ -5,48 +6,58 @@ import React, { useState, useEffect, useRef } from "react";
 export default function OurServices() {
   const services = [
     {
-      title: "UI/UX Design",
+      title: "Data Engineering",
       imageUrl:
-        "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
       description:
-        "We craft intuitive and beautiful user interfaces that your users will love.",
+        "Build robust data pipelines and infrastructure that power your business intelligence.",
       fullDescription:
-        "Our UI/UX design process is centered around the user, ensuring that every interaction is seamless and enjoyable. We conduct thorough research and testing to create designs that are not only visually stunning but also highly functional.",
+        "We design and implement scalable data architectures, ETL pipelines, and data warehouses. Our data engineering solutions ensure your data is clean, accessible, and ready for analysis at scale.",
     },
     {
-      title: "Brand Identity",
+      title: "Data Analysis & Analytics",
       imageUrl:
-        "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
       description:
-        "We build strong, memorable brands that stand out from the crowd.",
+        "Transform raw data into actionable insights that drive strategic decisions.",
       fullDescription:
-        "We help you define your brand's voice, values, and visual identity. From logo design to brand guidelines, we create a cohesive and compelling brand that resonates with your target audience.",
+        "Our analytics experts uncover hidden patterns, trends, and opportunities in your data. We deliver comprehensive reports, dashboards, and predictive models that empower data-driven decision making.",
     },
     {
-      title: "Web Design & Development",
+      title: "Design & Development",
       imageUrl:
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
       description:
-        "We design and develop high-performance websites that drive results.",
+        "Craft beautiful, functional digital experiences that users love.",
       fullDescription:
-        "Our team of expert designers and developers build fast, responsive, and SEO-friendly websites. We use the latest technologies to create a seamless experience for your users and drive conversions for your business.",
+        "From UI/UX design to full-stack development, we create stunning web and mobile applications. Our design-led approach ensures every product is intuitive, accessible, and aligned with your brand vision.",
     },
     {
-      title: "Design System",
+      title: "AI Strategy & Consulting",
       imageUrl:
-        "https://images.unsplash.com/photo-1541462608143-67571c6738dd?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80",
       description:
-        "We create comprehensive design systems for consistency and scale.",
+        "Navigate the AI landscape with expert guidance and strategic roadmaps.",
       fullDescription:
-        "We build robust design systems that ensure brand consistency across all your products and platforms. Our design systems are well-documented and easy to use, empowering your team to build better products faster.",
+        "We help you identify high-impact AI opportunities, assess readiness, and develop implementation strategies. Our consultants align AI initiatives with your business goals to maximize ROI and competitive advantage.",
     },
     {
-      title: "3D Modelling",
-      imageUrl: "slideimage2.jpg",
+      title: "AI Automations",
+      imageUrl:
+        "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
       description:
-        "We bring your ideas to life with stunning 3D models and visualizations.",
+        "Streamline operations with intelligent automation powered by AI.",
       fullDescription:
-        "Our team of 3D artists creates high-quality models and animations for a variety of applications, including product visualization, architectural rendering, and virtual reality experiences. We use industry-standard software to deliver stunning results.",
+        "We build custom AI-powered automation solutions that reduce manual work, increase accuracy, and boost productivity. From document processing to customer service bots, we automate what matters most.",
+    },
+    {
+      title: "Data Quality Optimization",
+      imageUrl:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      description:
+        "Ensure data accuracy, consistency, and reliability across your organization.",
+      fullDescription:
+        "We implement data quality frameworks, monitoring systems, and governance policies. Our solutions detect and resolve data issues proactively, ensuring your analytics and AI models are built on trusted data.",
     },
   ];
 
@@ -91,7 +102,7 @@ export default function OurServices() {
                 Our Services
               </p>
               <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-                What We Do Best
+                Data-Driven Solutions for Modern Business
               </h2>
             </div>
             <div className="space-y-2 sm:space-y-4">
@@ -114,10 +125,10 @@ export default function OurServices() {
             <div className="mt-4 sm:mt-6 py-2 sm:py-3 px-2">
               <div className="bg-white text-black rounded-md max-w-md">
                 <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-5">
-                  Delivering digital experiences through versatile subscription
+                  From data infrastructure to AI automation, we deliver end-to-end solutions that drive business impact.
                 </p>
                 <a
-                  href="#"
+                  href="/contact"
                   className="relative inline-flex items-center justify-center bg-black text-white font-semibold py-2 px-4 text-xs rounded-full overflow-hidden group"
                 >
                   <span className="absolute inset-0 bg-green-700 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
@@ -132,8 +143,7 @@ export default function OurServices() {
           {/* Right Column: Quote and Image Parallax */}
           <div className="flex flex-col">
             <blockquote className="text-gray-600 max-w-lg text-xs sm:text-sm mb-6 sm:mb-8 lg:mb-10 pt-4 sm:pt-8">
-              "We help brands stand out in the digital space through beautifully
-              crafted user experiences and strategic design thinking."
+              "We transform complex data challenges into competitive advantages through strategic consulting, robust engineering, and intelligent automation."
             </blockquote>
             <div className="relative h-[300px] sm:h-[400px] lg:h-[450px] w-full overflow-hidden rounded-md shadow-xl sm:shadow-2xl">
               {services.map((service, index) => {
