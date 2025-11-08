@@ -12,15 +12,37 @@ export default function ContactPage() {
     setForm((s) => ({ ...s, [name]: value }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     setSubmitting(true);
-    // Simulate form submission
-    setTimeout(() => {
+    
+    try {
+      const response = await fetch('/api/v1/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.ok) {
+        alert("Thanks - your message has been sent!");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        alert('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred. Please try again.');
+    } finally {
       setSubmitting(false);
-  alert("Thanks - your message has been sent!");
-      setForm({ name: "", email: "", message: "" });
-    }, 700);
+    }
   }
 
   return (
