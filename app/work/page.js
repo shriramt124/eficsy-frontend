@@ -4,21 +4,6 @@ import { WhyChooseUs } from "../about/page";
 import { ContactCTA } from "../about/page";
 import { apiUrl } from '../../lib/api';
 
-export const metadata = {
-  title: "Our Work - Portfolio of Data Engineering & AI Projects",
-  description: "Explore Eficsy's portfolio of successful data engineering, AI automation, analytics, and web development projects. See how we've helped businesses transform with technology.",
-  keywords: ["eficsy portfolio", "data engineering projects", "AI automation case studies", "web development portfolio", "client success stories"],
-  openGraph: {
-    title: "Eficsy Portfolio - Real Results from Data & AI Solutions",
-    description: "Browse our collection of successful projects across data engineering, AI, and digital development.",
-    url: "https://eficsy.com/work",
-    type: "website",
-  },
-  alternates: {
-    canonical: '/work',
-  },
-};
-
 async function fetchProjects() {
   // Try common CMS ports: prefer 3001, fall back to 3000
   const url = apiUrl('/api/v1/projects?limit=100');

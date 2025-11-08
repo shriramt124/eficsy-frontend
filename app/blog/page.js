@@ -4,21 +4,6 @@ import BlogHero from '../components/BlogHero';
 import Image from 'next/image';
 import { apiUrl } from '../../lib/api';
 
-export const metadata = {
-  title: "Blog - Insights on Data Engineering, AI & Technology Trends",
-  description: "Stay updated with the latest insights on data engineering, AI automation, machine learning, analytics, and digital transformation from Eficsy's experts.",
-  keywords: ["data engineering blog", "AI insights", "technology trends", "machine learning articles", "data analytics tips", "digital transformation"],
-  openGraph: {
-    title: "Eficsy Blog - Expert Insights on Data & AI",
-    description: "Read the latest articles on data engineering, AI, analytics, and modern technology solutions.",
-    url: "https://eficsy.com/blog",
-    type: "website",
-  },
-  alternates: {
-    canonical: '/blog',
-  },
-};
-
 async function getPosts() {
   try {
     // Ensure this port matches the one your 'next-tiptap' project is running on

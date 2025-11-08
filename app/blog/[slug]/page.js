@@ -3,61 +3,6 @@ import { notFound } from 'next/navigation';
 import { apiUrl } from '../../../lib/api';
 function cx(...classes) { return classes.filter(Boolean).join(' '); }
 
-export async function generateMetadata({ params }) {
-  const resolvedParams = await params;
-  const { slug } = resolvedParams;
-  
-  try {
-    const url = apiUrl(`/api/v1/posts/${slug}`);
-    const res = await fetch(url, { next: { revalidate: 60 } });
-    
-    if (!res.ok) return {
-      title: "Blog Post Not Found",
-      description: "The requested blog post could not be found.",
-    };
-    
-    const data = await res.json();
-    const post = data.data;
-    
-    return {
-      title: `${post.title} | Eficsy Blog`,
-      description: post.excerpt || post.description || `Read ${post.title} on Eficsy's blog about data engineering, AI, and technology.`,
-      keywords: post.tags || ["data engineering", "AI", "technology", "blog"],
-      authors: [{ name: post.author?.name || "Eficsy Team" }],
-      openGraph: {
-        title: post.title,
-        description: post.excerpt || post.description,
-        url: `https://eficsy.com/blog/${slug}`,
-        type: "article",
-        publishedTime: post.publishedAt || post.createdAt,
-        modifiedTime: post.updatedAt,
-        images: post.coverImageUrl ? [
-          {
-            url: post.coverImageUrl,
-            width: 1200,
-            height: 630,
-            alt: post.title,
-          }
-        ] : [],
-      },
-      twitter: {
-        card: "summary_large_image",
-        title: post.title,
-        description: post.excerpt || post.description,
-        images: post.coverImageUrl ? [post.coverImageUrl] : [],
-      },
-      alternates: {
-        canonical: `/blog/${slug}`,
-      },
-    };
-  } catch (error) {
-    return {
-      title: "Blog Post",
-      description: "Read our latest insights on data and technology.",
-    };
-  }
-}
-
 async function getPost(slug) {
   try {
     console.log("sluggg from the ",slug);

@@ -7,50 +7,50 @@ const slides = [
   {
     id: 1,
     background: "/slideimage1.jpg",
-    title: "Transform Your Data Into Business Value",
+    title: "Custom Web Solutions",
     description:
-      "Turn raw data into actionable insights with our enterprise-grade data engineering and analytics solutions. Build scalable data pipelines that power smarter decisions.",
-    buttonText: "Start Your Data Journey",
+      "We craft bespoke websites and platforms tailored to your unique business needs and goals.",
+    buttonText: "Explore Our Services",
     metrics: [
-      { value: "10X", label: "Faster Data Processing" },
-      { value: "99.9%", label: "Data Accuracy" },
-      { value: "60%", label: "Cost Reduction" },
+      { value: "45%+", label: "Average Conversion Lift" },
+      { value: "2X", label: "Faster Page Loads" },
+      { value: "99.9%", label: "Uptime Guarantee" },
     ],
     principles: [
-      { icon: "user", title: "Data Engineering" },
-      { icon: "agile", title: "Real-Time Analytics" },
-      { icon: "scalable", title: "Cloud Infrastructure" },
+      { icon: "user", title: "User-Centric Design" },
+      { icon: "agile", title: "Agile Development" },
+      { icon: "scalable", title: "Scalable Architecture" },
     ],
   },
   {
     id: 2,
     background: "/slideimage2.jpg",
-    title: "Accelerate Growth With AI Automation",
+    title: "Innovative Mobile Apps",
     description:
-      "Harness the power of artificial intelligence to automate processes, predict outcomes, and unlock new revenue streams for your business.",
-    buttonText: "Explore AI Solutions",
+      "Engaging and high-performance mobile applications for iOS and Android that captivate your users.",
+    buttonText: "Discover Mobile Solutions",
     principles: [
-      { icon: "user", title: "Machine Learning Models" },
-      { icon: "agile", title: "Intelligent Automation" },
-      { icon: "scalable", title: "Predictive Analytics" },
+      { icon: "user", title: "Intuitive UX/UI" },
+      { icon: "agile", title: "Cross-Platform" },
+      { icon: "scalable", title: "Performance Optimized" },
     ],
   },
   {
     id: 3,
     background: "/slideimg3.jpg",
-    title: "Design & Build Digital Experiences",
+    title: "AI-Powered Insights",
     description:
-      "Create stunning, high-performance web and mobile applications that engage users and drive conversions. From concept to launch, we build products that scale.",
-    buttonText: "View Our Work",
+      "Leverage artificial intelligence to unlock data-driven insights and automate your business processes.",
+    buttonText: "Explore AI Services",
     quote: {
-      text: "We combine cutting-edge design with robust engineering to deliver digital products that transform businesses and delight users.",
-      author: "Eficsy Team",
-      role: "Design & Development",
+      text: "Our architecture is built for scale, ensuring your platform grows seamlessly with your business.",
+      author: "Jane Doe",
+      role: "Lead Architect",
     },
     principles: [
-      { icon: "user", title: "User-Centric Design" },
-      { icon: "agile", title: "Modern Tech Stack" },
-      { icon: "scalable", title: "Scalable Solutions" },
+      { icon: "user", title: "Machine Learning" },
+      { icon: "agile", title: "Predictive Analytics" },
+      { icon: "scalable", title: "Data Visualization" },
     ],
   },
 ];
@@ -179,6 +179,12 @@ export default function Hero() {
                   <span className="absolute inset-0 bg-green-700 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
                   <span className="relative z-10 transition-colors duration-500">
                     {slides[currentSlide].buttonText}
+                  </span>
+                </button>
+                <button className="relative inline-flex items-center px-2 xs:px-3 sm:px-4 py-1.5 xs:py-2 text-xs xs:text-sm rounded-full border border-white text-white/90 overflow-hidden group transition">
+                  <span className="absolute inset-0 bg-white transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
+                  <span className="relative z-10 group-hover:text-black transition-colors duration-500">
+                    Learn more
                   </span>
                 </button>
               </div>
