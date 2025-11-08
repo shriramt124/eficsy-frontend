@@ -91,12 +91,10 @@ export default async function BlogPage() {
                 <div className="rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 relative group">
                   <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
                   {/* Image Container */}
-                  <div className="relative  overflow-hidden z-10">
+                  <div className="relative h-48 overflow-hidden z-10">
                     <Image
                       src={post.coverImageUrl || '/assets/demo/cs1.webp'}
                       alt={post.title}
-                      width={40}
-                      height={40}
                       fill
                       className="object-cover group-hover:scale-[1.05] transition-transform duration-500"
                     />

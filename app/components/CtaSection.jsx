@@ -40,7 +40,7 @@ const CtaSection = () => {
         </h2>
         <div className="mt-6 sm:mt-8 md:mt-10 flex items-center justify-center">
           <a
-            href="#"
+            href="/contact"
             aria-label="Free Consultation"
             className="relative bg-white text-black rounded-full font-semibold px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base inline-flex items-center gap-2 sm:gap-3 shadow-sm overflow-hidden group"
           >
