@@ -125,12 +125,12 @@ export default function Hero() {
           <div className="lg:col-span-2 flex flex-col justify-center">
             <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-2 xs:mb-3 sm:mb-4 drop-shadow-lg">{slides[currentSlide].title}</h1>
             <p className="text-xs xs:text-sm sm:text-base md:text-lg text-gray-200 max-w-2xl mb-3 xs:mb-4 sm:mb-6">{slides[currentSlide].description}</p>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 xs:gap-3 sm:gap-4">
-              <button className="relative inline-flex items-center px-3 xs:px-4 sm:px-6 py-1.5 xs:py-2 sm:py-3 text-xs xs:text-sm rounded-full bg-black text-white font-semibold overflow-hidden group transition-all hover:scale-[1.02] w-full sm:w-auto justify-center">
+            <div className="flex flex-col sm:flex-row items-start gap-2 xs:gap-3 sm:gap-4">
+              <button className="relative inline-flex items-center px-3 xs:px-4 sm:px-6 py-1.5 xs:py-2 sm:py-3 text-xs xs:text-sm rounded-full bg-black text-white font-semibold overflow-hidden group transition-all hover:scale-[1.02]">
                 <span className="absolute inset-0 bg-green-700 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
                 <span className="relative z-10 transition-colors duration-500">{slides[currentSlide].buttonText}</span>
               </button>
-              <button className="relative inline-flex items-center px-2 xs:px-3 sm:px-4 py-1.5 xs:py-2 text-xs xs:text-sm rounded-full border border-white text-white/90 overflow-hidden group transition w-full sm:w-auto justify-center">
+              <button className="relative inline-flex items-center px-2 xs:px-3 sm:px-4 py-1.5 xs:py-2 text-xs xs:text-sm rounded-full border border-white text-white/90 overflow-hidden group transition">
                 <span className="absolute inset-0 bg-white transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
                 <span className="relative z-10 group-hover:text-black transition-colors duration-500">Learn more</span>
               </button>
