@@ -89,7 +89,7 @@ export default function Challenges() {
               style={getTitleStyle()}
               className="absolute inset-0 flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#0b1220] max-w-4xl mx-auto leading-tight z-10 transition-all duration-500 ease-out px-4"
             >
-              We recognize the challenges you face. That is why your path to impact with AI starts here.
+              We don't just write code. we solv your business problems
             </h2>
 
             {/* Positioned info cards with parallax */}
@@ -101,7 +101,7 @@ export default function Challenges() {
               >
                 <div className="flex items-start gap-1.5 sm:gap-2 lg:gap-3">
                   <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.29 3.86L1.82 18a1.75 1.75 0 001.49 2.6h16.38a1.75 1.75 0 001.49-2.6L13.71 3.86a1.75 1.75 0 00-3.42 0zM12 9v4m0 4h.01" /></svg>
-                  <div className="text-[10px] sm:text-xs lg:text-sm text-gray-800">Skilled teams stuck in repetitive work instead of creating value.</div>
+                  <div className="text-[10px] sm:text-xs lg:text-sm text-gray-800">Business-First approach</div>
                 </div>
               </div>
 
@@ -112,7 +112,7 @@ export default function Challenges() {
               >
                 <div className="flex items-start gap-1.5 sm:gap-2 lg:gap-3">
                   <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.29 3.86L1.82 18a1.75 1.75 0 001.49 2.6h16.38a1.75 1.75 0 001.49-2.6L13.71 3.86a1.75 1.75 0 00-3.42 0zM12 9v4m0 4h.01" /></svg>
-                  <div className="text-[10px] sm:text-xs lg:text-sm text-gray-800">Processes that slow decisions and frustrate customers.</div>
+                  <div className="text-[10px] sm:text-xs lg:text-sm text-gray-800">Fast and Transparent Delivery</div>
                 </div>
               </div>
 
@@ -123,7 +123,7 @@ export default function Challenges() {
               >
                 <div className="flex items-start gap-1.5 sm:gap-2 lg:gap-3">
                   <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.29 3.86L1.82 18a1.75 1.75 0 001.49 2.6h16.38a1.75 1.75 0 001.49-2.6L13.71 3.86a1.75 1.75 0 00-3.42 0zM12 9v4m0 4h.01" /></svg>
-                  <div className="text-[10px] sm:text-xs lg:text-sm text-gray-800">Scaling that requires more people instead of smarter systems.</div>
+                  <div className="text-[10px] sm:text-xs lg:text-sm text-gray-800">Build to Scale and Secure.</div>
                 </div>
               </div>
 
@@ -134,7 +134,7 @@ export default function Challenges() {
               >
                 <div className="flex items-start gap-1.5 sm:gap-2 lg:gap-3">
                   <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-amber-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.29 3.86L1.82 18a1.75 1.75 0 001.49 2.6h16.38a1.75 1.75 0 001.49-2.6L13.71 3.86a1.75 1.75 0 00-3.42 0zM12 9v4m0 4h.01" /></svg>
-                  <div className="text-[10px] sm:text-xs lg:text-sm text-gray-800">Technology investments that add cost instead of driving growth.</div>
+                  <div className="text-[10px] sm:text-xs lg:text-sm text-gray-800">Enterprice grade architecutre and startup friendly cost.</div>
                 </div>
               </div>
             </div>
