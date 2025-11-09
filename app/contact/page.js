@@ -72,7 +72,7 @@ export default function ContactPage() {
             </p>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <input
                   id="name"
@@ -81,7 +81,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   placeholder="Full Name"
                   required
-                  className="w-full bg-white border-2 border-black rounded-lg px-5 py-4 placeholder-gray-500 text-black text-base focus:outline-none focus:ring-2 focus:ring-black transition-all"
+                  className="w-full bg-white border border-black rounded-lg px-4 py-2.5 placeholder-gray-500 text-black text-sm focus:outline-none focus:ring-1 focus:ring-black transition-all"
                 />
               </div>
               <div>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   placeholder="Email address"
                   required
-                  className="w-full bg-white border-2 border-black rounded-lg px-5 py-4 placeholder-gray-500 text-black text-base focus:outline-none focus:ring-2 focus:ring-black transition-all"
+                  className="w-full bg-white border border-black rounded-lg px-4 py-2.5 placeholder-gray-500 text-black text-sm focus:outline-none focus:ring-1 focus:ring-black transition-all"
                 />
               </div>
               <div>
@@ -103,16 +103,16 @@ export default function ContactPage() {
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Tell us about your project..."
-                  rows={6}
+                  rows={5}
                   required
-                  className="w-full bg-white border-2 border-black rounded-lg px-5 py-4 placeholder-gray-500 text-black text-base focus:outline-none focus:ring-2 focus:ring-black resize-none transition-all"
+                  className="w-full bg-white border border-black rounded-lg px-4 py-2.5 placeholder-gray-500 text-black text-sm focus:outline-none focus:ring-1 focus:ring-black resize-none transition-all"
                 />
               </div>
               <div>
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full bg-black hover:bg-gray-800 text-white font-bold rounded-lg px-8 py-4 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed text-base"
+                  className="w-full bg-black hover:bg-gray-800 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed text-sm"
                 >
                   {submitting ? "Sending..." : "Send Message"}
                 </button>
@@ -140,7 +140,7 @@ export default function ContactPage() {
       <div className="mx-auto max-w-7xl mt-20 px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Address Card */}
-          <div className="rounded-2xl bg-white p-8 border-2 border-black hover:shadow-xl transition-shadow duration-300">
+          <div className="rounded-2xl bg-white p-8 border border-black hover:shadow-xl transition-shadow duration-300">
             <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-black mb-5">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-white">
                 <path
@@ -163,7 +163,7 @@ export default function ContactPage() {
           </div>
 
           {/* Phone Card */}
-          <div className="rounded-2xl bg-white p-8 border-2 border-black hover:shadow-xl transition-shadow duration-300">
+          <div className="rounded-2xl bg-white p-8 border border-black hover:shadow-xl transition-shadow duration-300">
             <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-black mb-5">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-white">
                 <path
@@ -180,7 +180,7 @@ export default function ContactPage() {
           </div>
 
           {/* Email Card */}
-          <div className="rounded-2xl bg-white p-8 border-2 border-black hover:shadow-xl transition-shadow duration-300">
+          <div className="rounded-2xl bg-white p-8 border border-black hover:shadow-xl transition-shadow duration-300">
             <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-black mb-5">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-white">
                 <path
