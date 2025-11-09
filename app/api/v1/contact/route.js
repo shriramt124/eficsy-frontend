@@ -26,6 +26,7 @@ export async function POST(req) {
         await resend.emails.send({
           from: process.env.CONTACT_EMAIL_FROM || 'noreply@eficsy.com',
           to: process.env.CONTACT_EMAIL_TO,
+          replyTo: body.email,
           subject: `New Contact Form Submission from ${body.name}`,
           html: getContactEmailHtml(body),
           text: getContactEmailText(body),
