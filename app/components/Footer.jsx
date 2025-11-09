@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -13,9 +14,16 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-24">
         {/* Top: Brand + Subscribe */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-8">
-          <h2 className="text-[48px] leading-[0.9] sm:text-[64px] md:text-[80px] lg:text-[112px] font-extrabold tracking-tight">
-            EFICSY 
-          </h2>
+          <div className="w-[200px] sm:w-[280px] md:w-[350px] lg:w-[400px]">
+            <Image
+              src="/eficwhite.jpg"
+              alt="EFICSY Logo"
+              width={400}
+              height={120}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
 
           <form className="w-full max-w-md lg:max-w-lg">
             <div className="flex items-center rounded-full bg-white/10 ring-1 ring-white/20 overflow-hidden">
