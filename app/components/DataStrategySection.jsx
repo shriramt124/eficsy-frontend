@@ -99,7 +99,7 @@ export default function DataStrategySection() {
           <div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight">
 
-             <span style={{ fontFamily: "'Brandon Grotesque', sans-serif" }}>Efficsy</span> is an industry leading studio specializing in Data Engineering, AI Strategy, Analytics Solutions, Design & Development.
+             <span style={{ fontFamily: "'Brandon Grotesque', sans-serif" }}>Eficsy</span> is an industry leading studio specializing in Data Engineering, AI Strategy, Analytics Solutions, Design & Development.
             </h2>
           </div>
 
