@@ -159,7 +159,7 @@ export default function ContactPage() {
             </div>
             <div className="h-px w-full bg-gray-300 mb-5" />
             <h3 className="text-xl font-bold text-black mb-2">Our Address</h3>
-            <p className="text-gray-600 text-base">1234 Elm Street, Suite 567, Springfield</p>
+            <p className="text-gray-600 text-base">Gurgaon, India</p>
           </div>
 
           {/* Phone Card */}
@@ -176,7 +176,7 @@ export default function ContactPage() {
             </div>
             <div className="h-px w-full bg-gray-300 mb-5" />
             <h3 className="text-xl font-bold text-black mb-2">Phone</h3>
-            <p className="text-gray-600 text-base">+91 123 456789</p>
+            <p className="text-gray-600 text-base">0124 6134524</p>
           </div>
 
           {/* Email Card */}
@@ -194,7 +194,7 @@ export default function ContactPage() {
             </div>
             <div className="h-px w-full bg-gray-300 mb-5" />
             <h3 className="text-xl font-bold text-black mb-2">Email</h3>
-            <p className="text-gray-600 text-base">shriramt.124@gmail.com</p>
+            <p className="text-gray-600 text-base">info@eficsy.com</p>
           </div>
         </div>
       </div>
