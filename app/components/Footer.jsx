@@ -5,9 +5,23 @@ import Image from "next/image";
 export default function Footer() {
   const year = new Date().getFullYear();
 
-  const mainPages = ["Home", "About", "Works", "Blog"];
-  const innerPages = ["Contact", "Blog Single", "Project Single"];
-  const utilityPages = ["Styleguide", "Changelog", "License", "Instructions"];
+  const mainPages = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Work", href: "/work" },
+    { name: "Blog", href: "/blog" }
+  ];
+
+  const innerPages = [
+    { name: "Services", href: "/services" },
+    { name: "Contact", href: "/contact" },
+    { name: "Careers", href: "/careers" }
+  ];
+
+  const utilityPages = [
+    { name: "Admin", href: "/admin" },
+    { name: "Investors", href: "/investors" }
+  ];
 
   return (
     <footer className="bg-black text-white">
@@ -52,7 +66,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <p className="text-white/90 text-sm sm:text-base lg:text-lg max-w-md">
               Ready to bring your ideas to life? Share your vision with us or just drop a hello —
-              we’re excited to collaborate with you!
+              we're excited to collaborate with you!
             </p>
             <div className="mt-5 sm:mt-6">
               <a
@@ -71,7 +85,11 @@ export default function Footer() {
               <h4 className="text-white/80 mb-3 sm:mb-4 font-semibold text-sm sm:text-base">Main Pages</h4>
               <ul className="space-y-2 sm:space-y-3 text-white/70 text-sm">
                 {mainPages.map((item) => (
-                  <li key={item}><a href="#" className="hover:text-white transition">{item}</a></li>
+                  <li key={item.name}>
+                    <a href={item.href} className="hover:text-white transition">
+                      {item.name}
+                    </a>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -79,7 +97,11 @@ export default function Footer() {
               <h4 className="text-white/80 mb-3 sm:mb-4 font-semibold text-sm sm:text-base">Inner Pages</h4>
               <ul className="space-y-2 sm:space-y-3 text-white/70 text-sm">
                 {innerPages.map((item) => (
-                  <li key={item}><a href="#" className="hover:text-white transition">{item}</a></li>
+                  <li key={item.name}>
+                    <a href={item.href} className="hover:text-white transition">
+                      {item.name}
+                    </a>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -87,7 +109,11 @@ export default function Footer() {
               <h4 className="text-white/80 mb-3 sm:mb-4 font-semibold text-sm sm:text-base">Utility Pages</h4>
               <ul className="space-y-2 sm:space-y-3 text-white/70 text-sm">
                 {utilityPages.map((item) => (
-                  <li key={item}><a href="#" className="hover:text-white transition">{item}</a></li>
+                  <li key={item.name}>
+                    <a href={item.href} className="hover:text-white transition">
+                      {item.name}
+                    </a>
+                  </li>
                 ))}
               </ul>
             </div>
