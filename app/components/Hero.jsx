@@ -171,7 +171,7 @@ export default function Hero() {
         <div className="relative z-20 max-w-7xl mx-auto h-full px-3 xs:px-4 sm:px-6 lg:px-12 flex items-center">
           <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
             <div className="lg:col-span-2 flex flex-col justify-center">
-              <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-2 xs:mb-3 sm:mb-4 drop-shadow-lg">
+              <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-extrabold text-white leading-tight mb-2 xs:mb-3 sm:mb-4 drop-shadow-lg">
                 {slides[currentSlide].title}
               </h1>
               <p className="text-xs xs:text-sm sm:text-base md:text-lg text-gray-200 max-w-2xl mb-3 xs:mb-4 sm:mb-6">
