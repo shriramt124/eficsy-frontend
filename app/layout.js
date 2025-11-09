@@ -17,9 +17,9 @@ export const metadata = {
   title: "Eficsy - Data Analytics, AI & Web Development Solutions",
   description: "Eficsy delivers cutting-edge data analytics, AI automation, and web & mobile app development services to transform your business.",
   icons: {
-    icon: '/eficlogo.png',
-    shortcut: '/eficlogo.png',
-    apple: '/eficlogo.png',
+    icon: '/eficwhite1.png',
+    shortcut: '/eficwhite1.png',
+    apple: '/eficwhite1.png',
   },
 };
 
