@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-8">
           <div className="w-[200px] sm:w-[280px] md:w-[350px] lg:w-[400px]">
             <Image
-              src="/eficwhite.jpg"
+              src="/eficwhite1.png"
               alt="EFICSY Logo"
               width={400}
               height={120}
