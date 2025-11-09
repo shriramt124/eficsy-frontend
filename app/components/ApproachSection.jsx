@@ -113,7 +113,7 @@ export default function ApproachSection() {
 
           {/* Right: Content */}
           <div className="order-2 lg:order-2">
-            <p className="text-xs sm:text-sm text-gray-400 mb-3 sm:mb-4">Our Approach</p>
+            <p className="text-xs sm:text-sm text-gray-400 mb-3 sm:mb-4">We are</p>
             <h2 ref={headingRef} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-4 sm:mb-6">
               More Than Just Engineers —
               <br />
