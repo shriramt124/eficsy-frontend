@@ -4,6 +4,7 @@ import { badRequest, json, serverError } from '../_utils';
 import { Resend } from 'resend';
 import { getContactEmailHtml, getContactEmailText } from '@/lib/email-templates';
 
+// Resend-only implementation (one-way notification). Simpler & easier to debug.
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export async function POST(req) {
@@ -20,20 +21,33 @@ export async function POST(req) {
       message: body.message || undefined,
     });
     
-    // Send email notification if Resend is configured
-    if (resend && process.env.CONTACT_EMAIL_TO) {
+    const to = process.env.CONTACT_EMAIL_TO;
+    const from = process.env.CONTACT_EMAIL_FROM || 'noreply@eficsy.com';
+    const subject = `New Contact Form: ${body.name}`;
+    const html = getContactEmailHtml(body);
+    const text = getContactEmailText(body);
+
+    if (!resend) {
+      console.warn('[contact] RESEND_API_KEY missing: email not sent. Stored only.');
+    } else if (!to) {
+      console.warn('[contact] CONTACT_EMAIL_TO missing: email not sent.');
+    } else {
       try {
-        await resend.emails.send({
-          from: process.env.CONTACT_EMAIL_FROM || 'noreply@eficsy.com',
-          to: process.env.CONTACT_EMAIL_TO,
+        const sendResult = await resend.emails.send({
+          from,
+          to,
           replyTo: body.email,
-          subject: `New Contact Form Submission from ${body.name}`,
-          html: getContactEmailHtml(body),
-          text: getContactEmailText(body),
+            subject,
+          html,
+          text,
         });
-      } catch (emailError) {
-        console.error('Failed to send email notification:', emailError);
-        // Don't fail the request if email fails
+        if (sendResult.error) {
+          console.error('[contact] Resend API error:', sendResult.error);
+        } else {
+          console.log('[contact] Resend email sent id:', sendResult.data?.id);
+        }
+      } catch (err) {
+        console.error('[contact] Resend send failed:', err);
       }
     }
     

@@ -40,9 +40,9 @@ const steps = [
 ];
 
 export default function ProcessTimeline() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const triggerRef = useRef<HTMLDivElement>(null);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef(null);
+  const triggerRef = useRef(null);
+  const scrollContainerRef = useRef(null);
 
   useEffect(() => {
     const pin = gsap.fromTo(
@@ -149,3 +149,4 @@ export default function ProcessTimeline() {
     </section>
   );
 }
+ 

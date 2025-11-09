@@ -30,6 +30,7 @@ export default function ContactPage() {
       });
 
       const data = await response.json();
+      console.log("data from ",data);
 
       if (response.ok && data.ok) {
         alert("Thanks - your message has been sent!");
