@@ -86,10 +86,10 @@ export default function BlogHero({ posts = [], auto = 6500 }) {
             <span className="opacity-70">•</span>
             <span className="opacity-90">{items[i].tag}</span>
           </div>
-          <h1 className="text-white font-extrabold leading-tight text-3xl sm:text-5xl lg:text-6xl mb-4">
+          <h1 className="text-white font-extrabold leading-tight text-2xl sm:text-4xl lg:text-5xl mb-4 line-clamp-3">
             {items[i].title}
           </h1>
-          <p className="text-white/85 text-sm sm:text-base lg:text-lg max-w-2xl mb-6">
+          <p className="text-white/85 text-sm sm:text-base max-w-2xl mb-6 line-clamp-3">
             {items[i].excerpt}
           </p>
           <a
