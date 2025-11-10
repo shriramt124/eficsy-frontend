@@ -1,12 +1,24 @@
-import dbConnect from '@/lib/mongoose';
-import JobPosting from '@/models/JobPosting';
+
+import getConnection from '@/lib/mysql';
+import { generateId } from '@/lib/mysql-helpers';
 import { json, serverError } from '../_utils';
 
 export async function GET() {
   try {
-    await dbConnect();
-    const items = await JobPosting.find({ isOpen: true }).sort({ createdAt: -1 }).lean();
-    return json(items);
+    const db = await getConnection();
+    const [rows] = await db.query('SELECT * FROM job_postings WHERE is_open = TRUE ORDER BY created_at DESC');
+    
+    const items = rows.map(row => ({
+      id: row.id,
+      title: row.title,
+      department: row.department,
+      location: row.location,
+      type: row.type,
+      description: row.description,
+      isOpen: row.is_open
+    }));
+    
+    return json({ items });
   } catch (e) {
     return serverError(e);
   }
@@ -14,10 +26,16 @@ export async function GET() {
 
 export async function POST(req) {
   try {
-    await dbConnect();
+    const db = await getConnection();
     const body = await req.json();
-    const item = await JobPosting.create(body);
-    return json(item, { status: 201 });
+    const id = generateId();
+    
+    await db.query(
+      'INSERT INTO job_postings (id, title, department, location, type, description, is_open) VALUES (?, ?, ?, ?, ?, ?, ?)',
+      [id, body.title, body.department || null, body.location || null, body.type || null, body.description, body.isOpen !== false]
+    );
+    
+    return json({ id, ...body }, { status: 201 });
   } catch (e) {
     return serverError(e);
   }

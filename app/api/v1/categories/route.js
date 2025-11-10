@@ -1,12 +1,20 @@
-import dbConnect from '@/lib/mongoose';
-import Category from '@/models/Category';
+
+import getConnection from '@/lib/mysql';
+import { generateId } from '@/lib/mysql-helpers';
 import { json, serverError } from '../_utils';
 
 export async function GET() {
   try {
-    await dbConnect();
-    const items = await Category.find({}).sort({ name: 1 }).lean();
-    return json(items);
+    const db = await getConnection();
+    const [rows] = await db.query('SELECT * FROM categories ORDER BY name ASC');
+    
+    const items = rows.map(row => ({
+      id: row.id,
+      slug: row.slug,
+      name: row.name
+    }));
+    
+    return json({ items });
   } catch (e) {
     return serverError(e);
   }
@@ -14,10 +22,16 @@ export async function GET() {
 
 export async function POST(req) {
   try {
-    await dbConnect();
+    const db = await getConnection();
     const body = await req.json();
-    const item = await Category.create(body);
-    return json(item, { status: 201 });
+    const id = generateId();
+    
+    await db.query(
+      'INSERT INTO categories (id, slug, name) VALUES (?, ?, ?)',
+      [id, body.slug, body.name]
+    );
+    
+    return json({ id, ...body }, { status: 201 });
   } catch (e) {
     return serverError(e);
   }

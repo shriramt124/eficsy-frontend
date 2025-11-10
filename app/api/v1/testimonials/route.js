@@ -1,12 +1,22 @@
-import dbConnect from '@/lib/mongoose';
-import Testimonial from '@/models/Testimonial';
+
+import getConnection from '@/lib/mysql';
+import { generateId } from '@/lib/mysql-helpers';
 import { json, serverError } from '../_utils';
 
 export async function GET() {
   try {
-    await dbConnect();
-    const items = await Testimonial.find({}).sort({ createdAt: -1 }).lean();
-    return json(items);
+    const db = await getConnection();
+    const [rows] = await db.query('SELECT * FROM testimonials ORDER BY created_at DESC');
+    
+    const items = rows.map(row => ({
+      id: row.id,
+      name: row.name,
+      role: row.role,
+      avatar: row.avatar,
+      text: row.text
+    }));
+    
+    return json({ items });
   } catch (e) {
     return serverError(e);
   }
@@ -14,10 +24,16 @@ export async function GET() {
 
 export async function POST(req) {
   try {
-    await dbConnect();
+    const db = await getConnection();
     const body = await req.json();
-    const item = await Testimonial.create(body);
-    return json(item, { status: 201 });
+    const id = generateId();
+    
+    await db.query(
+      'INSERT INTO testimonials (id, name, role, avatar, text) VALUES (?, ?, ?, ?, ?)',
+      [id, body.name, body.role || null, body.avatar || null, body.text]
+    );
+    
+    return json({ id, ...body }, { status: 201 });
   } catch (e) {
     return serverError(e);
   }
