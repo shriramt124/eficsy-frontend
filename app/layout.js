@@ -24,7 +24,7 @@ export const metadata = {
   description: "Leading data engineering company specializing in AI automation, machine learning solutions, ETL pipelines, cloud data warehousing, business intelligence, and enterprise software development. Transform your business with cutting-edge data analytics and AI-powered automation.",
   keywords: [
     // Data Engineering Keywords
-    "data engineering services", 
+    "data engineering services",
     "ETL pipeline development",
     "data warehouse consulting",
     "big data solutions",
@@ -34,7 +34,7 @@ export const metadata = {
     "data lake implementation",
     "Apache Spark development",
     "Snowflake consulting",
-    
+
     // AI & ML Keywords
     "AI automation services",
     "machine learning solutions",
@@ -46,7 +46,7 @@ export const metadata = {
     "AI chatbot development",
     "ML model deployment",
     "generative AI solutions",
-    
+
     // Development Keywords
     "custom software development",
     "web application development",
@@ -56,7 +56,7 @@ export const metadata = {
     "SaaS development",
     "API development services",
     "cloud native applications",
-    
+
     // Analytics Keywords
     "business intelligence consulting",
     "data analytics services",
@@ -66,7 +66,7 @@ export const metadata = {
     "advanced analytics",
     "predictive modeling",
     "data science consulting",
-    
+
     // Business Keywords
     "digital transformation",
     "data-driven solutions",
@@ -162,9 +162,10 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
         <Script
           id="organization-schema"

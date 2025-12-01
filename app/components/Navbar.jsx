@@ -1,11 +1,21 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Track scroll position for shadow effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Close mobile menu helper
   const closeMobile = () => setIsMobileMenuOpen(false);
@@ -19,7 +29,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="bg-white text-black sticky top-0 z-50 shadow-md">
+    <header className={`bg-white text-black sticky top-0 z-50 transition-shadow duration-300 ${isScrolled ? 'shadow-lg' : 'shadow-md'}`}>
       {/* Main Navigation */}
       <nav className="w-full">
         <div className="flex items-center justify-between h-14 sm:h-16 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
@@ -52,10 +62,10 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-          
+
           {/* CTA and Search - Right Side */}
           <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
-           
+
             <Link href="/contact" onClick={closeMobile} className="relative px-4 xl:px-6 py-1.5 xl:py-2 rounded-full font-medium text-xs xl:text-sm overflow-hidden group transition-all duration-300 shadow-lg bg-black text-white hover:scale-105">
               <span className="absolute inset-0 bg-green-700 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
               <span className="relative z-10">Contact us</span>
@@ -68,19 +78,16 @@ export default function Navbar() {
             className="lg:hidden relative w-9 h-9 sm:w-10 sm:h-10 flex flex-col items-center justify-center focus:outline-none group"
           >
             <span
-              className={`w-6 h-0.5 transition-all duration-300 bg-black ${
-                isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : 'mb-1.5'
-              }`}
+              className={`w-6 h-0.5 transition-all duration-300 bg-black ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : 'mb-1.5'
+                }`}
             ></span>
             <span
-              className={`w-6 h-0.5 transition-all duration-300 bg-black ${
-                isMobileMenuOpen ? 'opacity-0' : 'mb-1.5'
-              }`}
+              className={`w-6 h-0.5 transition-all duration-300 bg-black ${isMobileMenuOpen ? 'opacity-0' : 'mb-1.5'
+                }`}
             ></span>
             <span
-              className={`w-6 h-0.5 transition-all duration-300 bg-black ${
-                isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
-              }`}
+              className={`w-6 h-0.5 transition-all duration-300 bg-black ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
+                }`}
             ></span>
           </button>
         </div>
@@ -88,9 +95,8 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-500 ${
-          isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        }`}
+        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
       >
         <div className="py-4 px-6 space-y-1 bg-white border-t border-gray-200">
           {navLinks.map((link) => (

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Metrics from "../components/Metrics";
+import Button from "../components/ui/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,24 +25,24 @@ function AboutHero() {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
       // Animate tag with slide
-      tl.fromTo(tagRef.current, 
-        { opacity: 0, x: -30 }, 
+      tl.fromTo(tagRef.current,
+        { opacity: 0, x: -30 },
         { opacity: 1, x: 0, duration: 0.8 }
       );
 
       // Clip-path text reveal for title - each word reveals from bottom
       const words = titleRef.current.querySelectorAll(".word");
       tl.fromTo(words,
-        { 
-          opacity: 0, 
-          y: 100, 
+        {
+          opacity: 0,
+          y: 100,
           clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)"
         },
-        { 
-          opacity: 1, 
-          y: 0, 
+        {
+          opacity: 1,
+          y: 0,
           clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
-          duration: 1.2, 
+          duration: 1.2,
           stagger: 0.08,
           ease: "power4.out"
         },
@@ -50,14 +51,14 @@ function AboutHero() {
 
       // Description text with mask reveal
       tl.fromTo(descRef.current,
-        { 
-          opacity: 0, 
+        {
+          opacity: 0,
           y: 30,
           clipPath: "inset(0 0 100% 0)"
         },
-        { 
-          opacity: 1, 
-          y: 0, 
+        {
+          opacity: 1,
+          y: 0,
           clipPath: "inset(0 0 0% 0)",
           duration: 1
         },
@@ -67,10 +68,10 @@ function AboutHero() {
       // CTA button with bounce
       tl.fromTo(ctaRef.current,
         { opacity: 0, y: 20, scale: 0.9 },
-        { 
-          opacity: 1, 
+        {
+          opacity: 1,
           y: 0,
-          scale: 1, 
+          scale: 1,
           duration: 0.8,
           ease: "back.out(1.7)"
         },
@@ -80,9 +81,9 @@ function AboutHero() {
       // Video stays fixed (no parallax), just initial reveal
       gsap.fromTo(videoRef.current,
         { opacity: 0, scale: 0.95 },
-        { 
-          opacity: 1, 
-          scale: 1, 
+        {
+          opacity: 1,
+          scale: 1,
           duration: 1.2,
           ease: "power3.out",
           delay: 0.3
@@ -117,7 +118,7 @@ function AboutHero() {
     <section ref={sectionRef} className="relative bg-gradient-to-b from-white via-gray-50 to-white pt-12 pb-12 sm:pt-16 sm:pb-14 lg:pt-20 lg:pb-20 overflow-hidden">
       {/* Grid overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
-      
+
       <div className="relative max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-start">
           {/* Left: Content */}
@@ -125,7 +126,7 @@ function AboutHero() {
             <div ref={tagRef} className="mb-4 sm:mb-6">
               <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700">
                 <span className="w-2 h-2 rounded-full bg-black inline-block" />
-                 <span> About efic <span className="w-2 h-2 rounded-full bg-green-800 inline-block" /> sy </span>  
+                <span> About efic <span className="w-2 h-2 rounded-full bg-green-800 inline-block" /> sy </span>
               </span>
             </div>
 
@@ -134,11 +135,14 @@ function AboutHero() {
             </h1>
 
             <div ref={ctaRef} className="mb-8 sm:mb-10 md:mb-12 sm:mt-[100px]">
-              <a href="/contact" className="relative inline-flex items-center gap-2 sm:gap-3 bg-black text-white font-semibold text-xs sm:text-sm md:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-full overflow-hidden group transition-all hover:scale-105">
-                <span className="absolute inset-0 bg-green-800 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
-                <span className="relative z-10">START YOUR PROJECT</span>
-                <span aria-hidden className="relative z-10 ml-1">↗</span>
-              </a>
+              <Button
+                href="/contact"
+                size="lg"
+                icon
+                className="px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm md:text-base"
+              >
+                START YOUR PROJECT
+              </Button>
             </div>
           </div>
 
@@ -253,7 +257,7 @@ function StatsSection() {
 
       counters.forEach(({ ref, end, suffix = "", prefix = "" }) => {
         if (!ref.current) return;
-        
+
         gsap.fromTo(ref.current,
           { innerHTML: 0 },
           {
@@ -261,7 +265,7 @@ function StatsSection() {
             duration: 2,
             ease: "power2.out",
             snap: { innerHTML: 1 },
-            onUpdate: function() {
+            onUpdate: function () {
               if (ref.current) {
                 ref.current.innerHTML = prefix + Math.ceil(this.targets()[0].innerHTML) + suffix;
               }
@@ -402,10 +406,13 @@ function VisionSection() {
                 We combine cutting-edge data engineering, AI strategy, advanced analytics, and exceptional design & development to help businesses unlock new opportunities, optimize operations, and build products that users love.
               </p>
 
-              <a href="/services" className="reveal-line relative inline-flex items-center justify-center text-xs bg-black text-white font-semibold px-4 py-2 rounded-full overflow-hidden group transition-all hover:scale-105">
-                <span className="absolute inset-0 bg-green-800 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
-                <span className="relative z-10">Explore Our Services</span>
-              </a>
+              <Button
+                href="/services"
+                size="sm"
+                className="reveal-line px-4 py-2 text-xs"
+              >
+                Explore Our Services
+              </Button>
             </div>
 
             {/* Mission and Vision Cards */}
@@ -517,7 +524,7 @@ function TeamSection() {
         <div className="space-y-8 relative">
           {/* Floating Image on Hover */}
           {hoveredMember && (
-            <div 
+            <div
               className="hidden lg:block fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none z-50"
               style={{
                 animation: 'fadeIn 0.3s ease-out'
@@ -534,7 +541,7 @@ function TeamSection() {
           )}
 
           {teamMembers.map((member) => (
-            <div 
+            <div
               key={member.id}
               className="team-member border-t border-gray-200 pt-8 pb-8 px-8 cursor-pointer transition-all hover:border-black relative overflow-hidden group"
               onMouseEnter={() => setHoveredMember(member)}
@@ -542,7 +549,7 @@ function TeamSection() {
             >
               {/* Animated Background */}
               <div className="absolute inset-0 bg-black transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out -z-10"></div>
-              
+
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 relative z-10">
                 <div>
                   <h3 className="text-2xl sm:text-3xl font-bold mb-2 transition-colors group-hover:text-white duration-700">
@@ -623,11 +630,9 @@ export function WhyChooseUs() {
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-8">
               The <span style={{ fontFamily: "'Brandon Grotesque', sans-serif" }}>Eficsy</span> Advantage
             </h2>
-            <button className="relative inline-flex items-center gap-3 bg-green-800 text-white font-semibold text-sm px-6 py-3 rounded-full overflow-hidden group transition-all hover:scale-105">
-              <span className="absolute inset-0 bg-black transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
-              <span className="relative z-10">View Our Work</span>
-              <span className="relative z-10 inline-block rotate-45">↗</span>
-            </button>
+            <Button variant="accent" icon href="/work">
+              View Our Work
+            </Button>
           </div>
 
           {/* Right: stacked stagger cards */}
@@ -735,14 +740,14 @@ export function ContactCTA() {
           Ready to transform your
           <br className="hidden sm:block" /> data into results?
         </h2>
-        <a
+        <Button
           href="/contact"
-          className="relative inline-flex items-center gap-2 bg-black text-white font-semibold px-8 sm:px-10 py-4 sm:py-5 rounded-full overflow-hidden group transition-all hover:scale-105 text-base sm:text-lg"
+          size="lg"
+          icon
+          className="px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg"
         >
-          <span className="absolute inset-0 bg-green-800 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
-          <span className="relative z-10">Start Your Project</span>
-          <span className="relative z-10 inline-block transition-transform group-hover:translate-x-0.5">↗</span>
-        </a>
+          Start Your Project
+        </Button>
       </div>
     </section>
   );

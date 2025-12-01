@@ -8,27 +8,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CtaSection from "../components/CtaSection";
 import { ContactCTA } from "../about/page";
 import HorizontalScrollCarousel from "../components/HorizontalScrollCarousel";
+import Button from "../components/ui/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function ArrowUpRightIcon({ className = "w-5 h-5" }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M7 17L17 7M17 7H9M17 7V15"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+
 
 function ServicesHero() {
   const sectionRef = useRef(null);
@@ -53,12 +37,12 @@ function ServicesHero() {
       tl.fromTo(
         titleWords,
         { opacity: 0, y: 50, rotateX: -90 },
-        { 
-          opacity: 1, 
-          y: 0, 
-          rotateX: 0, 
-          duration: 0.8, 
-          stagger: 0.1 
+        {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          duration: 0.8,
+          stagger: 0.1
         },
         "-=0.3"
       );
@@ -111,15 +95,15 @@ function ServicesHero() {
   };
 
   return (
-    <section 
-      ref={sectionRef} 
+    <section
+      ref={sectionRef}
       className="relative pt-16 sm:pt-20 pb-12 sm:pb-16 bg-white text-black overflow-hidden"
     >
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-12">
-        <div 
+        <div
           ref={tagRef}
           className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gray-500 mb-4 sm:mb-6 inline-flex items-center gap-2"
         >
@@ -128,37 +112,30 @@ function ServicesHero() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center">
-          <h1 
+          <h1
             ref={titleRef}
-            className="lg:col-span-7 text-3xl sm:text-4xl md:text-5xl   font-extrabold leading-[1.05] tracking-tight"
+            className="lg:col-span-7 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05] tracking-tight text-black"
           >
             {splitText("Transform your business with data-driven solutions and intelligent automation")}
           </h1>
-          
+
           <div className="lg:col-span-5 space-y-4 sm:space-y-6">
-            <p 
+            <p
               ref={subtitleRef}
-              className="text-xs sm:text-lg md:text-md text-gray-700 leading-relaxed"
+              className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed"
             >
-              We specialize in data engineering, advanced analytics, cutting-edge design, 
-              AI strategy, and intelligent automation to help your business innovate, 
+              We specialize in data engineering, advanced analytics, cutting-edge design,
+              AI strategy, and intelligent automation to help your business innovate,
               scale, and succeed in the digital age.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-black text-white rounded-xl font-semibold text-sm   hover:bg-gray-800 transition-all hover:scale-105"
-              >
+              <Button href="/contact" icon>
                 Get Started
-                <ArrowUpRightIcon className="w-4 h-4 sm:w-5 sm:h-5" />
-              </a>
-              <a
-                href="#services"
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-black text-black rounded-xl font-semibold text-sm   hover:bg-black hover:text-white transition-all"
-              >
+              </Button>
+              <Button href="#services" variant="secondary">
                 View Services
-              </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -166,8 +143,8 @@ function ServicesHero() {
     </section>
   );
 }
- 
- 
+
+
 
 export default function ServicesPage() {
   const sections = useMemo(
@@ -281,7 +258,7 @@ export default function ServicesPage() {
       <ServicesHero />
       <StackedServices sections={sections} />
       <HorizontalScrollCarousel />
-      <ContactCTA  />
+      <ContactCTA />
     </main>
   );
 }
@@ -296,9 +273,9 @@ function StackedServices({ sections }) {
   return (
     <section ref={containerRef} className="relative bg-white text-black">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-12">
-        <div className="py-6 sm:py-8">
-          <div className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gray-500">/services</div>
-          <h2 className="mt-2 sm:mt-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold">What we do</h2>
+        <div className="py-12 sm:py-16">
+          <div className="text-xs uppercase tracking-[0.25em] text-gray-500 mb-3">/services</div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">What we do</h2>
         </div>
       </div>
 
@@ -341,14 +318,14 @@ function ServiceStackCard({ index, count, progress, id, label, title, descriptio
       className="sticky top-12 sm:top-16 md:top-20 will-change-transform"
     >
       <motion.div className="mx-auto max-w-7xl px-3 sm:px-4 md:px-6 lg:px-12" style={{ filter }}>
-        <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border border-black/10 bg-white">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 xl:gap-16 items-center p-4 sm:p-6 md:p-8 lg:p-10">
+        <div className="relative overflow-hidden rounded-2xl border border-black/5 bg-white">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center p-6 sm:p-8 md:p-10 lg:p-12">
             {/* Image column */}
             <div className={`${imageLeft ? 'lg:order-1' : ''}`}>
               {image && (
-                <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-[420px] overflow-hidden rounded-lg sm:rounded-xl bg-gray-100">
+                <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-[420px] overflow-hidden rounded-xl bg-gray-100">
                   <motion.div style={{ y: imgY }} className="absolute inset-0">
-                    <Image src={image} alt={title} fill className="object-cover" />
+                    <Image src={image} alt={title} fill className="object-cover transition-transform duration-700 hover:scale-105" />
                   </motion.div>
                 </div>
               )}
@@ -356,30 +333,31 @@ function ServiceStackCard({ index, count, progress, id, label, title, descriptio
 
             {/* Content column */}
             <div className="max-w-xl">
-              <div className="inline-block bg-black text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-md mb-3 sm:mb-4">
-                <span className="text-[10px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] font-semibold">{label}</span>
+              <div className="inline-block bg-black text-white px-4 py-2 rounded-lg mb-3">
+                <span className="text-[11px] uppercase tracking-[0.2em] font-bold">{label}</span>
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl   font-extrabold leading-tight mb-2 sm:mb-3">{title}</h3>
-              <p className="text-sm sm:text-base  text-gray-700 mb-3">{description}</p>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold leading-tight mb-3 text-black">{title}</h3>
+              <p className="text-base sm:text-lg text-gray-600 mb-4 leading-relaxed">{description}</p>
 
               {!!(bullets && bullets.length) && (
-                <ul className="space-y-2 sm:space-y-2 mb-5 sm:mb-6">
+                <ul className="space-y-2 mb-5">
                   {bullets.slice(0, 6).map((b, idx) => (
-                    <li key={idx} className="flex items-start gap-2 sm:gap-3">
-                      <span className="mt-1.5 sm:mt-2 h-1 w-1 sm:h-1.5 sm:w-1.5 rounded-full bg-black shrink-0" />
-                      <span className="text-black/90 text-xs sm:text-sm">{b}</span>
+                    <li key={idx} className="flex items-start gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-green-600 shrink-0" />
+                      <span className="text-gray-700 text-sm sm:text-base">{b}</span>
                     </li>
                   ))}
                 </ul>
               )}
 
-              <a
+              <Button
                 href={ctaHref}
-                className="inline-flex items-center gap-2 rounded-lg sm:rounded-xl border border-black/20 px-4 sm:px-5 py-2 sm:py-3 text-xs sm:text-sm font-semibold hover:bg-black hover:text-white transition-colors"
+                variant="primary"
+                size="md"
+                icon
               >
                 {ctaText}
-                <ArrowUpRightIcon className="w-4 h-4 sm:w-5 sm:h-5" />
-              </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -393,10 +371,10 @@ function Chevron({ dir = 'right', className = 'w-5 h-5' }) {
     dir === 'left'
       ? 'M15 6l-6 6 6 6'
       : dir === 'right'
-      ? 'M9 6l6 6-6 6'
-      : dir === 'up'
-      ? 'M6 15l6-6 6 6'
-      : 'M6 9l6 6 6-6';
+        ? 'M9 6l6 6-6 6'
+        : dir === 'up'
+          ? 'M6 15l6-6 6 6'
+          : 'M6 9l6 6 6-6';
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d={d} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

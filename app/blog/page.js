@@ -3,6 +3,7 @@ import { ContactCTA } from '../about/page';
 import BlogHero from '../components/BlogHero';
 import Image from 'next/image';
 import { apiUrl } from '../../lib/api';
+import { staticBlogs } from '../../lib/staticBlogs';
 
 export const metadata = {
   title: "Blog - Data Engineering & AI Insights | Eficsy",
@@ -23,24 +24,31 @@ async function getPosts() {
 
     if (!res.ok) {
       console.error('Failed to fetch posts:', res.status, await res.text());
-      return { posts: [], categories: [] };
+      // Return only static blogs if API fails
+      const categories = ['All', ...new Set(staticBlogs.map(p => p.category?.name).filter(Boolean))];
+      return { posts: staticBlogs, categories };
     }
 
     const data = await res.json();
     if (!data || typeof data !== 'object') {
       console.error('[BLOG LIST] Invalid JSON shape:', data);
     }
-    
-    const posts = data.data?.items || [];
-  console.log('[BLOG LIST] Posts length:', posts.length);
-    
-    // Dynamically extract categories from posts
-    const categories = ['All', ...new Set(posts.map(p => p.category?.name).filter(Boolean))];
 
-    return { posts, categories };
+    const apiPosts = data.data?.items || [];
+    console.log('[BLOG LIST] API Posts length:', apiPosts.length);
+
+    // Merge static blogs with API posts
+    const allPosts = [...staticBlogs, ...apiPosts];
+
+    // Dynamically extract categories from all posts
+    const categories = ['All', ...new Set(allPosts.map(p => p.category?.name).filter(Boolean))];
+
+    return { posts: allPosts, categories };
   } catch (error) {
     console.error('Error fetching posts:', error);
-    return { posts: [], categories: ['All'] };
+    // Return static blogs if API fails
+    const categories = ['All', ...new Set(staticBlogs.map(p => p.category?.name).filter(Boolean))];
+    return { posts: staticBlogs, categories };
   }
 }
 
@@ -50,8 +58,8 @@ export default async function BlogPage() {
   // Note: Pagination logic would need to be re-implemented,
   // possibly with server-side logic or more complex client-side state.
   // For now, we will display all fetched posts.
-  console.log(posts ,"from the blog page")
-  
+  console.log(posts, "from the blog page")
+
   return (
     <main className="min-h-screen bg-white text-black">
       {/* Blog hero slider */}
@@ -66,7 +74,7 @@ export default async function BlogPage() {
             <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-2">
               <span className="text-green-700">Read  news & more</span>
             </h2>
-           
+
           </div>
 
           {/* Category Filters */}
@@ -74,11 +82,10 @@ export default async function BlogPage() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
-                  cat === 'All'
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${cat === 'All'
                     ? 'bg-black text-white'
                     : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
-                }`}
+                  }`}
               >
                 {cat}
               </button>

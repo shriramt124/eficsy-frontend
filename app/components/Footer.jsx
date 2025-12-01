@@ -123,7 +123,7 @@ export default function Footer() {
         {/* tiny bottom bar */}
         <div className="border-t border-white/10 py-4 sm:py-6 text-xs sm:text-sm text-white/60 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p>© {year} EFICSY. All rights reserved.</p>
-          <div className="hidden sm:block">Mode in Web.</div>
+          <div className="hidden sm:block">Made in Web.</div>
         </div>
       </div>
     </footer>
