@@ -26,10 +26,19 @@ export default function Navbar() {
     { name: 'Work', href: '/work' },
     { name: 'About', href: '/about' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Tools', href: '/tools' },
   ];
 
   return (
     <header className={`bg-white text-black sticky top-0 z-50 transition-shadow duration-300 ${isScrolled ? 'shadow-lg' : 'shadow-md'}`}>
+      {/* Top Announcement Bar */}
+      <div className="bg-green-900 text-white text-[10px] sm:text-xs py-1.5 px-4 text-center font-medium tracking-wide relative z-50">
+        <Link href="/tools/roi-calculator" className="hover:underline flex items-center justify-center gap-2">
+          <span>✨ New Tool: Modern Data Stack ROI Calculator</span>
+          <span className="bg-white/20 px-1.5 py-0.5 rounded text-[9px] uppercase font-bold hidden sm:inline-block">Try Free</span>
+        </Link>
+      </div>
+
       {/* Main Navigation */}
       <nav className="w-full">
         <div className="flex items-center justify-between h-14 sm:h-16 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">

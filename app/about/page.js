@@ -736,7 +736,7 @@ export function ContactCTA() {
           </span>
           LET'S TALK
         </div>
-        <h2 className="relative font-extrabold tracking-tight leading-tight text-4xl sm:text-6xl md:text-7xl lg:text-[72px] mb-10">
+        <h2 className="relative font-extrabold tracking-tight leading-tight text-4xl sm:text-6xl md:text-7xl lg:text-[72px] mb-10 text-black">
           Ready to transform your
           <br className="hidden sm:block" /> data into results?
         </h2>

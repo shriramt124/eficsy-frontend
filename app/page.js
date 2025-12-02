@@ -10,6 +10,8 @@ import ContactUs from "./components/ContactUs";
 import { TestimonialMy } from "./components/TestiMonialMy";
 import BlogSection from "./components/BlogSection";
 import FaqSection from "./components/FaqSection";
+import ToolsTeaser from "./components/ToolsTeaser";
+import ToolsNotification from "./components/tools/ToolsNotification";
 
 
 export default function Home() {
@@ -72,6 +74,7 @@ export default function Home() {
       <Challenges />
       <Metrics />
       <OurServices />
+      <ToolsTeaser />
       <CtaSection />
       <DataStrategySection />
       <ApproachSection />
@@ -79,6 +82,7 @@ export default function Home() {
       <BlogSection />
       <FaqSection />
       <ContactUs />
+      <ToolsNotification />
     </>
   );
 }
